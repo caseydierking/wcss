@@ -29,9 +29,7 @@ defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
 pages:
   stage: deploy
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+  - echo 'Nothing to do...'
   artifacts:
     paths:
     - public
