@@ -40,8 +40,6 @@ pages:
 ```
 
 The above example expects to put all your HTML files in the `public/` directory.
-To use the files in the root directory, see the `host-from-root` branch
-https://gitlab.com/pages/plain-html/blob/host-from-root/.gitlab-ci.yml.
 
 ## GitLab User or Group Pages
 
