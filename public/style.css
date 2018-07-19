@@ -22,6 +22,6 @@ body {
   color: #ffffff;
 }
 
-img:hover {
+.horse:hover {
 cursor: url(images/brush2.png), auto;
 }
