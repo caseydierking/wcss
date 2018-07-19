@@ -22,3 +22,6 @@ body {
   color: #ffffff;
 }
 
+img:hover {
+cursor: url(images/brush.png), auto;
+}
