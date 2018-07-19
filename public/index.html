@@ -5,6 +5,8 @@
     <meta name="generator" content="GitLab Pages">
     <title>Plain HTML site using GitLab Pages</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
   </head>
   <body>
     <div class="navbar">
@@ -18,6 +20,29 @@
     <p>
       <div class="horse"><img src="images/winningcolors.jpg"></div>
     </p>
+    <h2>HQ Winnings</h2>
+    <canvas id="myChart"></canvas>
   </body>
+ <script type="application/javascript">
+ var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+ </script>
 </html>
 
