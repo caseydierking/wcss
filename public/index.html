@@ -31,12 +31,18 @@ var chart = new Chart(ctx, {
 
     // The data for our dataset
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         datasets: [{
-            label: "My First dataset",
+            label: "Hq Player to question ratio",
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [{
+        x: 10,
+        y: 20
+    }, {
+        x: 15,
+        y: 10
+    }]
         }]
     },
 
