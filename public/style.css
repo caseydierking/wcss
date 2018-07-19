@@ -23,5 +23,5 @@ body {
 }
 
 .horse:hover {
-cursor: url(images/brush2.png), auto;
+cursor: url("images/smallbrush.png"), auto;
 }
