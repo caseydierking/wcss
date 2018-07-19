@@ -22,6 +22,9 @@ body {
   color: #ffffff;
 }
 
+img {
+  max-width:600px;
+}
 .horse:hover {
 cursor: url("images/smallbrush.png"), auto;
 }
