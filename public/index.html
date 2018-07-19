@@ -24,30 +24,50 @@
     <canvas id="myChart"></canvas>
   </body>
  <script type="application/javascript">
- var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
+ var densityCanvas = document.getElementById("myChart");
 
-    // The data for our dataset
-    data: {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        datasets: [{
-            label: "Hq Player to question ratio",
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [{
-        x: 10,
-        y: 20
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var playerData = {
+  label: 'Number of Players',
+  data: [5427, 5243, 5514, 3933, 1326, 687, 1271, 1638],
+  backgroundColor: 'rgba(0, 99, 132, 0.6)',
+  borderWidth: 0,
+  yAxisID: "y-axis-players"
+};
+
+var questionData = {
+  label: 'Highest Question',
+  data: [3.7, 8.9, 9.8, 3.7, 23.1, 9.0, 8.7, 11.0],
+  backgroundColor: 'rgba(99, 132, 0, 0.6)',
+  borderWidth: 0,
+  yAxisID: "y-axis-question"
+};
+
+var planetData = {
+  labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  datasets: [playerData, questionData]
+};
+
+var chartOptions = {
+  scales: {
+    xAxes: [{
+      barPercentage: 1,
+      categoryPercentage: 0.6
+    }],
+    yAxes: [{
+      id: "y-axis-player"
     }, {
-        x: 15,
-        y: 10
+      id: "y-axis-question"
     }]
-        }]
-    },
+  }
+};
 
-    // Configuration options go here
-    options: {}
+var barChart = new Chart(densityCanvas, {
+  type: 'line',
+  data: planetData,
+  options: chartOptions
 });
  </script>
 </html>
