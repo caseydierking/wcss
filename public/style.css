@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
 * {
     position: relative;
     margin: 0;
@@ -75,3 +77,39 @@ body {
   -webkit-animation: progress-bar-stripes 1s linear infinite;
   animation: progress-bar-stripes 1s linear infinite;
 }
+
+h1 {
+  display: inline-block;
+  color: #22292F;
+  font-family: 'Righteous', serif;
+  font-size: 4em;
+  text-shadow: .03em .03em 0 hsla(210, 40%, 98%, 1);
+  }
+  h1:not(:last-child) {
+    margin-right: 1rem;
+  }
+  h1:after {
+    content: attr(data-shadow);
+    position: absolute;
+    top: .06em; left: .06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+      linear-gradient(
+        45deg,
+        transparent 45%,
+        hsla(208, 16%, 16%, 1) 45%,
+        hsla(208, 16%, 16%, 1) 55%,
+        transparent 0
+        );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shad-anim 15s linear infinite;
+    }
+
+@keyframes shad-anim {
+  0% {background-position: 0 0}
+  0% {background-position: 100% -100%}
+  }
