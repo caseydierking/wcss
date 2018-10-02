@@ -28,6 +28,14 @@ body {
   cursor: url(images/brush_active.svg) 32 32, auto;
 }
 
+.carrot {
+  cursor: url(images/carrot.svg) 32 32, auto;
+}
+
+.carrot:active {
+  cursor: url(images/carrot_active.svg) 32 32, auto;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
