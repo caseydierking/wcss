@@ -28,14 +28,6 @@ body {
   cursor: url(images/brush_active.svg) 32 32, auto;
 }
 
-.carrot {
-  cursor: url(images/carrot.svg) 32 32, auto;
-}
-
-.carrot:active {
-  cursor: url(images/carrot_active.svg) 32 32, auto;
-}
-
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
@@ -94,6 +86,26 @@ body {
   animation: progress-bar-stripes 1s linear infinite;
 }
 
+.footer-header {
+  font-size: 2em;
+  margin: 1em;
+}
+
+.footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.hacktober-logo {
+  height: 4em;
+  margin-bottom: 3em;
+}
+
 h1 {
   display: inline-block;
   color: #22292F;
@@ -121,7 +133,7 @@ h1 {
     background-size: .05em .05em;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  
+
     animation: shad-anim 15s linear infinite;
     }
 
