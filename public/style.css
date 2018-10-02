@@ -28,6 +28,30 @@ body {
   cursor: url(images/brush_active.svg) 32 32, auto;
 }
 
+.carrot {
+  cursor: url(images/carrot.svg) 32 32, auto;
+}
+
+.carrot:active {
+  cursor: url(images/carrot_active.svg) 32 32, auto;
+}
+
+.hay {
+  cursor: url(images/hay.svg) 32 32, auto;
+}
+
+.hay:active {
+  cursor: url(images/hay_active.svg) 32 32, auto;
+}
+
+.pitchfork {
+  cursor: url(images/pitchfork.svg) 32 32, auto;
+}
+
+.pitchfork:active {
+  cursor: url(images/pitchfork_active.svg) 32 32, auto;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
@@ -124,4 +148,25 @@ h1 {
 @keyframes shad-anim {
   0% {background-position: 0 0}
   0% {background-position: 100% -100%}
+  }
+
+  .icon-bar {
+    height: 100%;
+    position: fixed;
+    right: 32px;
+    width: 64px;
+    top: 32px;
+  }
+
+  .icon-bar button {
+      outline: none;
+    opacity: .5;
+  }
+
+  .icon-bar button:hover {
+    opacity: 1;
+  }
+
+  .icon-bar button.active {
+    opacity: 1;
   }
