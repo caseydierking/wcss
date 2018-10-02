@@ -15,8 +15,7 @@ body {
 .apple {
   cursor: url(images/apple.svg) 32 32, auto;
 }
-
-.apple:active {
+.apple.active {
   cursor: url(images/apple_active.svg) 32 32, auto;
 }
 
@@ -24,7 +23,7 @@ body {
   cursor: url(images/brush.svg) 32 32, auto;
 }
 
-.brush:active {
+.brush.active {
   cursor: url(images/brush_active.svg) 32 32, auto;
 }
 
@@ -32,7 +31,7 @@ body {
   cursor: url(images/carrot.svg) 32 32, auto;
 }
 
-.carrot:active {
+.carrot.active {
   cursor: url(images/carrot_active.svg) 32 32, auto;
 }
 
@@ -40,7 +39,7 @@ body {
   cursor: url(images/hay.svg) 32 32, auto;
 }
 
-.hay:active {
+.hay.active {
   cursor: url(images/hay_active.svg) 32 32, auto;
 }
 
@@ -48,7 +47,7 @@ body {
   cursor: url(images/pitchfork.svg) 32 32, auto;
 }
 
-.pitchfork:active {
+.pitchfork.active {
   cursor: url(images/pitchfork_active.svg) 32 32, auto;
 }
 
