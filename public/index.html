@@ -33,6 +33,11 @@
             </div>
           </div>
         </div>
+        <center>
+          <button onclick="changeCursor('brush')"><img src="images/brush.svg"/></button>
+          <button onclick="changeCursor('apple')"><img src="images/apple.svg"/><button>
+          <button onclick="changeCursor('carrot')"><img src="images/carrot.svg"/></button>
+        </center>
       </div>      
     </div>
 
@@ -49,6 +54,10 @@
           audio.play()
         }
       })
+
+      function changeCursor(type) {
+        document.getElementsByClassName('horse')[0].className = 'horse ' + type;
+      }
     </script>
   </body>
 </html>
