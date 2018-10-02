@@ -129,3 +129,24 @@ h1 {
   0% {background-position: 0 0}
   0% {background-position: 100% -100%}
   }
+
+  .icon-bar {
+    height: 100%;
+    position: fixed;
+    right: 32px;
+    width: 64px;
+    top: 32px;
+  }
+
+  .icon-bar button {
+      outline: none;
+    opacity: .5;
+  }
+
+  .icon-bar button:hover {
+    opacity: 1;
+  }
+
+  .icon-bar button.active {
+    opacity: 1;
+  }
