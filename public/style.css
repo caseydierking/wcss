@@ -110,6 +110,10 @@ body {
   animation: progress-bar-stripes 1s linear infinite;
 }
 
+.hacktober-logo {
+  height: 4em;
+}
+
 h1 {
   display: inline-block;
   color: #22292F;
@@ -137,7 +141,7 @@ h1 {
     background-size: .05em .05em;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  
+
     animation: shad-anim 15s linear infinite;
     }
 
