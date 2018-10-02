@@ -86,24 +86,8 @@ body {
   animation: progress-bar-stripes 1s linear infinite;
 }
 
-.footer-header {
-  font-size: 2em;
-  margin: 1em;
-}
-
-.footer {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: center;
-  justify-content: center;
-  align-items: center;
-}
-
 .hacktober-logo {
   height: 4em;
-  margin-bottom: 3em;
 }
 
 h1 {
