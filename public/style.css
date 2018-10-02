@@ -36,6 +36,22 @@ body {
   cursor: url(images/carrot_active.svg) 32 32, auto;
 }
 
+.hay {
+  cursor: url(images/hay.svg) 32 32, auto;
+}
+
+.hay:active {
+  cursor: url(images/hay_active.svg) 32 32, auto;
+}
+
+.pitchfork {
+  cursor: url(images/pitchfork.svg) 32 32, auto;
+}
+
+.pitchfork:active {
+  cursor: url(images/pitchfork_active.svg) 32 32, auto;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
