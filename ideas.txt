@@ -1,0 +1,7 @@
+Make the horse into an SVG
+Animate each body part while stationary (e.g. eyes move, tail wags, muscles twitch, etc)
+Ability to drag and drop horse around grass, stable, pen
+You can paint the horse different colors
+You can save the picture into a repository for others to view (download and upload functionality)
+You can control the horse via arrow buttons
+Make the horse into a 2d game where you can decorate the horse, feed the horse for energy and race against an AI
