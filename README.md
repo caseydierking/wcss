@@ -4,7 +4,7 @@
 
 Winning Colors Splish Splash
 
-The Official Lean Tech Therapy Pony.
+Just a bunch of ridiculousness rolled up in this one.
 
 ---
 
