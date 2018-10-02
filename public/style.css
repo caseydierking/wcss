@@ -52,6 +52,15 @@ body {
   cursor: url(images/pitchfork_active.svg) 32 32, auto;
 }
 
+.dark-mode{
+  background: url('images/night-bg.jpeg');
+  background-size: 100% 100%;
+}
+
+.dark-mode button{
+  background: #ccc;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
@@ -160,7 +169,9 @@ h1 {
 
   .icon-bar button {
       outline: none;
-    opacity: .5;
+      opacity: .5;
+      padding: 8px;
+      margin-bottom: 10px;
   }
 
   .icon-bar button:hover {
@@ -168,5 +179,20 @@ h1 {
   }
 
   .icon-bar button.active {
+    opacity: 1;
+  }
+
+  .icon-bar .dark-mode-btn{
+    opacity: 1;
+  }
+
+  .dark-mode .icon-bar .dark-mode-btn{
+    opacity: .5;
+  }
+
+
+  .dark-mode-btn img{
+    width: 48px;
+    height: 48px;
     opacity: 1;
   }

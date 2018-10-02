@@ -13,3 +13,8 @@ function changeCursor(elem,type) {
 	[].forEach.call(elems, function(el) { el.classList.remove("active"); });
 	elem.classList.add('active');
 }
+
+function classToggle() {
+    document.querySelector('body').classList.toggle('dark-mode');
+}
+document.querySelector('.dark-mode-btn').addEventListener('click', classToggle);
