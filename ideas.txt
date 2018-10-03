@@ -1,4 +1,3 @@
-Make the horse into an SVG
 Animate each body part while stationary (e.g. eyes move, tail wags, muscles twitch, etc)
 Ability to drag and drop horse around grass, stable, pen
 You can paint the horse different colors
