@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
 <html class="h-full">
+
 <head>
     <meta charset="utf-8">
     <meta name="generator" content="GitLab Pages">
-
     <title>Winning Colors Splish Splash</title>
-
     <link rel="icon" type="image/png" href="favicon.png" sizes="64x64">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/motor_functions.css">
 </head>
+
 <body class="bg-grey-lightest font-sans h-full">
     <div class="container h-full mx-auto">
         <div>
@@ -29,27 +29,33 @@
                 <!-- End of CuterCounter Code -->
             </center>
             <div class="horse">
-                <img
-                    draggable="false"
-                    class="shadow-lg w-full md:w-auto"
-                    src="images/winningcolors.jpg"
-                    onmousedown="onHorseMouseDown(this, event)"
-                    onmouseup="onHorseMouseUp(this, event)"
-                >
+                <img class="shadow-lg w-full md:w-auto" src="images/winningcolors.jpg" onmousedown="onHorseMouseDown(this, event)" onmouseup="onHorseMouseUp(this, event)">
+                <!-- Eyes code -->
+                <div class="eyes">
+                    <div class="eye1">
+                        <img src="images/eye-1.png" alt="Eyes">
+                    </div>
+                    <div class="eye2">
+                        <img src="images/eye-2.png" alt="Eyes">
+                    </div>
+                </div>
+                <!-- End of Eyes code -->
             </div>
             <div class="icon-bar">
-              <button onclick="changeCursor(this,'brush')"><img src="images/brush.svg"/></button>
-              <button onclick="changeCursor(this,'apple')"><img src="images/apple.svg"/></button>
-              <button onclick="changeCursor(this,'carrot')"><img src="images/carrot.svg"/></button>
-              <button onclick="changeCursor(this,'hay')"><img src="images/hay.svg"/></button>
-              <button onclick="changeCursor(this,'pitchfork')"><img src="images/pitchfork.svg"/></button>
+                <button onclick="changeCursor(this,'brush')"><img src="images/brush.svg"/></button>
+                <button onclick="changeCursor(this,'apple')"><img src="images/apple.svg"/></button>
+                <button onclick="changeCursor(this,'carrot')"><img src="images/carrot.svg"/></button>
+                <button onclick="changeCursor(this,'hay')"><img src="images/hay.svg"/></button>
+                <button onclick="changeCursor(this,'pitchfork')"><img src="images/pitchfork.svg"/></button>
             </div>
         </div>
     </div>
-
-
     <audio loop>
         <source src="audio/bliss.mp3" type="audio/mpeg">
-    </audio>
-</body>
-</html>
+        </audio>
+        <script src="js/script.js"></script>
+        <script src="js/motor_functions.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+    </html>

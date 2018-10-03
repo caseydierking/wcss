@@ -1,0 +1,57 @@
+/*
+    Author - Aman(@adsingh14)
+==============================
+    Eyes Movement
+*/
+.eyes {
+    position: absolute;
+    z-index: 100000000;
+    top: 12.5rem;
+    right: 10.2rem;
+}
+
+.eye1 {
+    position: relative;
+    z-index: 4;
+    transform-origin: left bottom;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+
+}
+
+.eye2 {
+    transform-origin: left top;
+    animation-timing-function: ease;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+@keyframes eyelid_down {
+
+    from,
+    to {
+        transform: rotate(0deg);
+
+    }
+
+    50% {
+        transform: rotate(25deg);
+
+    }
+}
+@keyframes eyelid_up {
+
+    from,
+    to {
+        transform: rotate(0deg);
+
+    }
+
+    50% {
+        transform: rotate(-25deg);
+
+    }
+}
