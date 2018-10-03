@@ -13,43 +13,43 @@ body {
 }
 
 .apple {
-  cursor: url(images/apple.svg) 32 32, auto;
+  cursor: url(../images/apple.svg) 32 32, auto;
 }
 
 .apple:active {
-  cursor: url(images/apple_active.svg) 32 32, auto;
+  cursor: url(../images/apple_active.svg) 32 32, auto;
 }
 
 .brush {
-  cursor: url(images/brush.svg) 32 32, auto;
+  cursor: url(../images/brush.svg) 32 32, auto;
 }
 
 .brush:active {
-  cursor: url(images/brush_active.svg) 32 32, auto;
+  cursor: url(../images/brush_active.svg) 32 32, auto;
 }
 
 .carrot {
-  cursor: url(images/carrot.svg) 32 32, auto;
+  cursor: url(../images/carrot.svg) 32 32, auto;
 }
 
 .carrot:active {
-  cursor: url(images/carrot_active.svg) 32 32, auto;
+  cursor: url(../images/carrot_active.svg) 32 32, auto;
 }
 
 .hay {
-  cursor: url(images/hay.svg) 32 32, auto;
+  cursor: url(../images/hay.svg) 32 32, auto;
 }
 
 .hay:active {
-  cursor: url(images/hay_active.svg) 32 32, auto;
+  cursor: url(../images/hay_active.svg) 32 32, auto;
 }
 
 .pitchfork {
-  cursor: url(images/pitchfork.svg) 32 32, auto;
+  cursor: url(../images/pitchfork.svg) 32 32, auto;
 }
 
 .pitchfork:active {
-  cursor: url(images/pitchfork_active.svg) 32 32, auto;
+  cursor: url(../images/pitchfork_active.svg) 32 32, auto;
 }
 
 @-webkit-keyframes progress-bar-stripes {

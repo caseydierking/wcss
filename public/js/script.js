@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener("DOMContentLoaded", function (event) {
 	var audio = document.querySelector('audio');
 	audio.volume = 0.05;
