@@ -1,3 +1,5 @@
+"use strict";
+
 // Approximate relative location of horse's mouth
 var HORSE_MOUTH_X_START = 0.85;
 var HORSE_MOUTH_X_END = 0.91;
@@ -7,8 +9,7 @@ var HORSE_MOUTH_Y_END = 0.45;
 // List of edible items
 var FOOD_LIST = ['apple','carrot','hay'];
 
-
-document.addEventListener("DOMContentLoaded", function (event) {
+document.body.addEventListener("DOMContentLoaded", function (event) {
     var audio = document.querySelector('audio');
     audio.volume = 0.05;
 
