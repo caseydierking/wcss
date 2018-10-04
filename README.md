@@ -4,6 +4,8 @@
 
 Winning Colors Splish Splash
 
+*The unofficial official Hacktoberfest Horse.*
+
 Just a bunch of ridiculousness rolled up in this one.
 
 ---
