@@ -2,22 +2,14 @@
 
 // Horse eye movements - Aman(@adsingh14)
 
-var spacebarKey = 32,
-    eye1 = document.querySelector('.eye1'),
-    eye2 = document.querySelector('.eye2');
+var eyelid = document.getElementById("eyelid");
 
-document.body.addEventListener('keypress',
-    function myFunction(wink) {
-        wink.preventDefault();
-        var x = wink.spacebarKey || wink.spacebarKey;
-        winky();
-    });
-
-function winky() {
+document.body.addEventListener("keydown", function myFunction(wink) {
+  wink.preventDefault();
+  if (wink.keyCode == 32) {
     setTimeout(function() {
-        eye1.style.animationName = 'eyelid_down';
-        eye2.style.animationName = 'eyelid_up';
-    }, 500);
-    eye1.style.animationName = '';
-    eye2.style.animationName = '';
-}
+      eyelid.style.animationName = "eyelid";
+    }, 200);
+    eyelid.style.animationName = "";
+  }
+});

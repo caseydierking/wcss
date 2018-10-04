@@ -1,57 +1,50 @@
-/*
-    Author - Aman(@adsingh14)
+.cls-1 {
+  fill: #f4e3c9;
+}
+
+.cls-1,
+.cls-2,
+.cls-3 {
+  stroke: #000;
+  stroke-miterlimit: 10;
+}
+
+.cls-2 {
+  fill: #d1954e;
+}
+
+.cls-3 {
+  fill: #ffeed9;
+}
+
+/* Author  - Aman(@adsingh14)
 ==============================
-    Eyes Movement
-*/
-.eyes {
-    position: absolute;
-    z-index: 100000000;
-    top: 12.5rem;
-    right: 10.2rem;
+Eyes Movement */
+
+#Layer_5 {
+  stroke: rgba(0, 0, 0, 0.4);
+  stroke-width: 5;
 }
 
-.eye1 {
-    position: relative;
-    z-index: 4;
-    transform-origin: left bottom;
-    animation-timing-function: ease;
-    animation-duration: 0.3s;
-    animation-direction: alternate;
-    animation-fill-mode: both;
-
+#eyelid {
+  fill: #d1954e;
+  stroke: #d1954e;
+  stroke-width: 6;
+  transform-origin: left bottom;
+  animation-timing-function: ease;
+  animation-duration: 0.3s;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  transform: translate(5px, -40px) rotate(0deg);
 }
 
-.eye2 {
-    transform-origin: left top;
-    animation-timing-function: ease;
-    animation-duration: 0.3s;
-    animation-direction: alternate;
-    animation-fill-mode: both;
-}
+@keyframes eyelid {
+  from,
+  to {
+    transform: translate(5px, -40px) rotate(0deg);
+  }
 
-@keyframes eyelid_down {
-
-    from,
-    to {
-        transform: rotate(0deg);
-
-    }
-
-    50% {
-        transform: rotate(25deg);
-
-    }
-}
-@keyframes eyelid_up {
-
-    from,
-    to {
-        transform: rotate(0deg);
-
-    }
-
-    50% {
-        transform: rotate(-25deg);
-
-    }
+  50% {
+    transform: translate(-10px, -20px) rotate(1.2deg);
+  }
 }
