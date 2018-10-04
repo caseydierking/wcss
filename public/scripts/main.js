@@ -35,3 +35,8 @@ function onHorseMouseDown(img) {
 function onHorseMouseUp(img) {
     img.parentElement.classList.remove("active");
 }
+
+function classToggle() {
+    document.querySelector('body').classList.toggle('dark-mode');
+}
+document.querySelector('.dark-mode-btn').addEventListener('click', classToggle);
