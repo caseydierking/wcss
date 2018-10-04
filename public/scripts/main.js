@@ -1,6 +1,10 @@
 // List of edible items
 var FOOD_LIST = ['apple','carrot','hay'];
 
+document.addEventListener("DOMContentLoaded", function(){
+    checkIfNightTime();
+});
+
 document.addEventListener("DOMContentLoaded", function (event) {
     var audio = document.querySelector('audio');
     audio.volume = 0.05;
@@ -10,6 +14,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
 });
 
+function checkIfNightTime()
+{
+    var currentHours = new Date().getHours();
+    var isCurrentlyNightTime = (currentHours >= 18 || currentHours <= 8);
+    var bodyElement = document.querySelector('body');
+    var isNightTimeAlreadyToggled = bodyElement.classList.contains('dark-mode');
+
+    if(isCurrentlyNightTime && !isNightTimeAlreadyToggled)
+    {
+        bodyElement.classList.add("dark-mode");
+    }
+    else if(!isCurrentlyNightTime && isNightTimeAlreadyToggled)
+    {
+        bodyElement.classList.remove("dark-mode");
+    }
+}
+setInterval(checkIfNightTime, 5 * 60 * 1000);
 
 function changeCursor(elem,type) {
     document.getElementsByClassName('horse')[0].className = 'horse ' + type;
@@ -36,7 +57,6 @@ function onHorseMouseUp(img) {
     img.parentElement.classList.remove("active");
 }
 
-function classToggle() {
+document.querySelector('.dark-mode-btn').addEventListener('click', function(){
     document.querySelector('body').classList.toggle('dark-mode');
-}
-document.querySelector('.dark-mode-btn').addEventListener('click', classToggle);
+});
