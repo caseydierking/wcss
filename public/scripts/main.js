@@ -1,38 +1,40 @@
 // List of edible items
-var FOOD_LIST = ['apple','carrot','hay'];
+var FOOD_LIST = ['apple', 'carrot', 'hay'];
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     checkIfNightTime();
 });
 
 document.addEventListener("DOMContentLoaded", function (event) {
+    var song = ['audio/Horse-and-carriage-passing-by.mp3', 'audio/Horse-hooves-sound.mp3', 'audio/Horse-sound-effect.mp3'];
+    var songRandom = song[Math.floor(Math.random() * song.length)];
     var audio = document.querySelector('audio');
     audio.volume = 0.05;
-
+    audio.src = songRandom;
+    audio.type = "audio/mpeg";
+    audio.addEventListener('ended', function () {
+        audio.src = 'audio/bliss.mp3';
+    });
     document.onmouseover = function () {
         audio.play();
     };
 });
 
-function checkIfNightTime()
-{
+function checkIfNightTime() {
     var currentHours = new Date().getHours();
     var isCurrentlyNightTime = (currentHours >= 18 || currentHours <= 8);
     var bodyElement = document.querySelector('body');
     var isNightTimeAlreadyToggled = bodyElement.classList.contains('dark-mode');
 
-    if(isCurrentlyNightTime && !isNightTimeAlreadyToggled)
-    {
+    if (isCurrentlyNightTime && !isNightTimeAlreadyToggled) {
         bodyElement.classList.add("dark-mode");
-    }
-    else if(!isCurrentlyNightTime && isNightTimeAlreadyToggled)
-    {
+    } else if (!isCurrentlyNightTime && isNightTimeAlreadyToggled) {
         bodyElement.classList.remove("dark-mode");
     }
 }
 setInterval(checkIfNightTime, 5 * 60 * 1000);
 
-function changeCursor(elem,type) {
+function changeCursor(elem, type) {
     document.getElementsByClassName('horse')[0].className = 'horse ' + type;
     var elems = document.querySelectorAll(".icon-bar button");
     [].forEach.call(elems, function (el) {
@@ -42,12 +44,12 @@ function changeCursor(elem,type) {
 }
 
 function checkFood(item) {
-  return FOOD_LIST.includes(item);
+    return FOOD_LIST.includes(item);
 }
 
 function onHorseMouseDown(img) {
     var element = img.parentElement;
-    var isFood = checkFood(element.classList[element.classList.length-1]);
+    var isFood = checkFood(element.classList[element.classList.length - 1]);
     if (isFood) {
         element.classList.add("active");
     }
@@ -57,6 +59,6 @@ function onHorseMouseUp(img) {
     img.parentElement.classList.remove("active");
 }
 
-document.querySelector('.dark-mode-btn').addEventListener('click', function(){
+document.querySelector('.dark-mode-btn').addEventListener('click', function () {
     document.querySelector('body').classList.toggle('dark-mode');
 });
