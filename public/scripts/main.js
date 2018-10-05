@@ -30,7 +30,7 @@ function checkIfNightTime() {
 setInterval(checkIfNightTime, 5 * 60 * 1000);
 
 function changeCursor(elem, type) {
-  document.getElementsByClassName("horse")[0].className = "horse " + type;
+  document.getElementsByClassName("horse-area")[0].className = "horse-area " + type;
   var elems = document.querySelectorAll(".icon-bar button");
   [].forEach.call(elems, function(el) {
     el.classList.remove("active");
