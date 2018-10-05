@@ -1,3 +1,11 @@
+/*
+*   Motor_functions.css
+*   ====================
+*   This file should have all the styles
+*   used for animations.
+*
+*/
+
 .cls-1 {
   fill: #f4e3c9;
 }
@@ -21,10 +29,7 @@
 ==============================
 Eyes Movement */
 
-#Layer_5 {
-  stroke: rgba(0, 0, 0, 0.4);
-  stroke-width: 5;
-}
+
 
 #eyelid {
   fill: #d1954e;
