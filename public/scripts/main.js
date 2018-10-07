@@ -1,6 +1,10 @@
 // List of edible items
 var FOOD_LIST = ['apple','carrot','hay'];
 
+window.onload = () => {
+    makePoo();
+};
+
 document.addEventListener("DOMContentLoaded", function(){
     checkIfNightTime();
 });
@@ -60,3 +64,20 @@ function onHorseMouseUp(img) {
 document.querySelector('.dark-mode-btn').addEventListener('click', function(){
     document.querySelector('body').classList.toggle('dark-mode');
 });
+
+const makePoo = () => {
+    let rand = Math.round(Math.random() * (10000) + 20000);
+    setTimeout(function() {
+        makePoo();
+        const poop = document.getElementsByClassName('poop')[0];
+        const displayStyle = window.getComputedStyle(poop).getPropertyValue('display');
+        poop.style.display = displayStyle === 'none' ? 'inline' : displayStyle;
+    }, rand);
+};
+
+const cleanUpPoo = (poop) => {
+    const cursorType = document.getElementsByClassName('horse')[0].className;
+    if (cursorType === 'horse pitchfork') {
+        poop.style.display = 'none';
+    }
+};
