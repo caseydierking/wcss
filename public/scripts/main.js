@@ -32,15 +32,6 @@ function checkIfNightTime()
 }
 setInterval(checkIfNightTime, 5 * 60 * 1000);
 
-<<<<<<< HEAD
-function changeCursor(elem, type) {
-  document.getElementsByClassName("horse")[0].className = "horse " + type;
-  var elems = document.querySelectorAll(".icon-bar button");
-  [].forEach.call(elems, function(el) {
-    el.classList.remove("active");
-  });
-  elem.classList.add("active");
-=======
 function changeCursor(elem,type) {
     document.getElementsByClassName('horse')[0].className = 'horse ' + type;
     var elems = document.querySelectorAll(".icon-bar button");
@@ -48,7 +39,6 @@ function changeCursor(elem,type) {
         el.classList.remove("active");
     });
     elem.classList.add('active');
->>>>>>> parent of cd7fd0f... Merge pull request #43 from adsingh14/master
 }
 
 function checkFood(item) {
