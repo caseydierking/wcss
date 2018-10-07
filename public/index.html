@@ -36,10 +36,16 @@
                 </div>
                 <img
                     draggable="false"
-                    class="w-full md:w-auto"
+                    class="w-full md:w-auto horse-img"
                     src="images/winningcolors.svg"
                 >
+                <img
+                    class="poop"
+                    src="images/poop.png"
+                    onclick="cleanUpPoo(this)"
+                >
             </div>
+
             <div class="icon-bar">
               <button onclick="changeCursor(this,'brush')"><img src="images/brush.svg"/></button>
               <button onclick="changeCursor(this,'apple')"><img src="images/apple.svg"/></button>

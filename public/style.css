@@ -19,7 +19,7 @@ body {
   border-radius: 20px;
 }
 
-.horse img {
+.horse-img {
   padding: 80px;
 }
 
@@ -140,6 +140,14 @@ body {
 
 .hacktober-logo {
   height: 4em;
+}
+
+.poop {
+  padding: 0;
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 15px;
 }
 
 h1 {
