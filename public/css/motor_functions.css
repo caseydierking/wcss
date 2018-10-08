@@ -1,3 +1,10 @@
+/*
+* Motor_functions.css
+* ====================
+* This file should have all
+* the styles used for svg animations.
+*/
+
 .cls-1 {
   fill: #f4e3c9;
 }
@@ -21,10 +28,7 @@
 ==============================
 Eyes Movement */
 
-#Layer_5 {
-  stroke: rgba(0, 0, 0, 0.4);
-  stroke-width: 5;
-}
+
 
 #eyelid {
   fill: #d1954e;
@@ -39,6 +43,7 @@ Eyes Movement */
 }
 
 @keyframes eyelid {
+
   from,
   to {
     transform: translate(5px, -40px) rotate(0deg);
