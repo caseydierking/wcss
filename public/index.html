@@ -13,7 +13,7 @@
 <body class="bg-grey-lightest font-sans h-full">
     <div class="container h-full mx-auto">
         <div>
-            <div class="flex items-center justify-center my-4">
+            <header class="flex items-center justify-center my-4">
                 <h1 data-shadow='Winning'>Winning</h1>
                 <h1 data-shadow='Colors'>Colors</h1>
                 <h1 data-shadow='Splish'>Splish</h1>
@@ -32,8 +32,18 @@
             <div class="horse">
                 <div class="mouth" onmousedown="onHorseMouseDown(this)" onmouseup="onHorseMouseUp(this)">
                 </div>
-                <img draggable="false" class="w-full md:w-auto" src="images/winningcolors.svg" alt="Our mascot, Winning Colors!" />
+                <img
+                    draggable="false"
+                    class="w-full md:w-auto horse-img"
+                    src="images/winningcolors.svg"
+                >
+                <img
+                    class="poop"
+                    src="images/poop.png"
+                    onclick="cleanUpPoo(this)"
+                >
             </div>
+
             <div class="icon-bar">
                 <button onclick="changeCursor(this,'brush')"><img src="images/brush.svg" alt="Brush" /></button>
                 <button onclick="changeCursor(this,'apple')"><img src="images/apple.svg" alt="Apple" /></button>

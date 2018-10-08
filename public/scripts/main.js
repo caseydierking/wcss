@@ -1,7 +1,15 @@
 // List of edible items
 var FOOD_LIST = ['apple', 'carrot', 'hay'];
 
-document.addEventListener('DOMContentLoaded', function (event) {
+window.onload = () => {
+    makePoo();
+};
+
+document.addEventListener("DOMContentLoaded", function(){
+    checkIfNightTime();
+});
+
+document.addEventListener("DOMContentLoaded", function (event) {
     var audio = document.querySelector('audio');
     audio.volume = 0.05;
 
@@ -27,7 +35,7 @@ function checkIfNightTime() {
 }
 setInterval(checkIfNightTime, 5 * 60 * 1000);
 
-function changeCursor(elem, type) {
+function changeCursor(elem,type) {
     document.getElementsByClassName('horse')[0].className = 'horse ' + type;
     var elems = document.querySelectorAll('.icon-bar button');
     [].forEach.call(elems, function (el) {
@@ -55,3 +63,20 @@ function onHorseMouseUp(img) {
 document.querySelector('.dark-mode-btn').addEventListener('click', function () {
     document.querySelector('body').classList.toggle('dark-mode');
 });
+
+const makePoo = () => {
+    let rand = Math.round(Math.random() * (10000) + 20000);
+    setTimeout(function() {
+        makePoo();
+        const poop = document.getElementsByClassName('poop')[0];
+        const displayStyle = window.getComputedStyle(poop).getPropertyValue('display');
+        poop.style.display = displayStyle === 'none' ? 'inline' : displayStyle;
+    }, rand);
+};
+
+const cleanUpPoo = (poop) => {
+    const cursorType = document.getElementsByClassName('horse')[0].className;
+    if (cursorType === 'horse pitchfork') {
+        poop.style.display = 'none';
+    }
+};

@@ -33,51 +33,42 @@ body {
 }
 
 .apple {
-  cursor: url('../images/apple.svg') 32 32, auto;
+  cursor: url(../images/apple.svg) 32 32, auto;
 }
 .apple.active {
-  cursor: url('../images/apple_active.svg') 32 32, auto;
+  cursor: url(../images/apple_active.svg) 32 32, auto;
 }
 
 .brush {
-  cursor: url('../images/brush.svg') 32 32, auto;
+  cursor: url(../images/brush.svg) 32 32, auto;
 }
 
 .brush.active {
-  cursor: url('../images/brush_active.svg') 32 32, auto;
+  cursor: url(../images/brush_active.svg) 32 32, auto;
 }
 
 .carrot {
-  cursor: url('../images/carrot.svg') 32 32, auto;
+  cursor: url(../images/carrot.svg) 32 32, auto;
 }
 
 .carrot.active {
-  cursor: url('../images/carrot_active.svg') 32 32, auto;
+  cursor: url(../images/carrot_active.svg) 32 32, auto;
 }
 
 .hay {
-  cursor: url('../images/hay.svg') 32 32, auto;
+  cursor: url(../images/hay.svg) 32 32, auto;
 }
 
 .hay.active {
-  cursor: url('../images/hay_active.svg') 32 32, auto;
+  cursor: url(../images/hay_active.svg) 32 32, auto;
 }
 
 .pitchfork {
-  cursor: url('../images/pitchfork.svg') 32 32, auto;
+  cursor: url(../images/pitchfork.svg) 32 32, auto;
 }
 
 .pitchfork.active {
-  cursor: url('../images/pitchfork_active.svg') 32 32, auto;
-}
-
-.dark-mode{
-  background: url('../images/night-bg.jpg');
-  background-size: 100% 100%;
-}
-
-.dark-mode button{
-  background: #ccc;
+  cursor: url(../images/pitchfork_active.svg) 32 32, auto;
 }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -129,7 +120,16 @@ body {
 }
 
 .progress-bar-striped {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(
+  45deg,
+  rgba(255, 255, 255, 0.15) 25%,
+  transparent 25%,
+  transparent 50%,
+  rgba(255, 255, 255, 0.15) 50%,
+  rgba(255, 255, 255, 0.15) 75%,
+  transparent 75%,
+  transparent
+  );
   background-size: 1rem 1rem;
 }
 
@@ -142,31 +142,26 @@ body {
   height: 4em;
 }
 
-h1 {
+header h1 {
   display: inline-block;
-  color: #22292F;
-  font-family: 'Righteous', serif;
+  color: #22292f;
+  font-family: "Righteous", serif;
   font-size: 4em;
-  text-shadow: .03em .03em 0 hsla(210, 40%, 98%, 1);
+  text-shadow: 0.03em 0.03em 0 hsla(210, 40%, 98%, 1);
 }
-h1:not(:last-child) {
+header h1:not(:last-child) {
   margin-right: 1rem;
 }
-h1:after {
+header h1:after {
   content: attr(data-shadow);
   position: absolute;
-  top: .06em; left: .06em;
+  top: 0.06em;
+  left: 0.06em;
   z-index: -1;
   text-shadow: none;
-  background-image:
-    linear-gradient(
-      45deg,
-      transparent 45%,
-      hsla(208, 16%, 16%, 1) 45%,
-      hsla(208, 16%, 16%, 1) 55%,
-      transparent 0
-      );
-  background-size: .05em .05em;
+  background: linear-gradient( 45deg, transparent 45%, hsla(208, 16%, 16%, 1) 45%, hsla(208, 16%, 16%, 1) 55%, transparent 0 );
+  background-size: 0.05em 0.05em;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -174,8 +169,12 @@ h1:after {
 }
 
 @keyframes shad-anim {
-  0% {background-position: 0 0}
-  0% {background-position: 100% -100%}
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
 }
 
 .icon-bar {
@@ -187,10 +186,12 @@ h1:after {
 }
 
 .icon-bar button {
-    outline: none;
-    opacity: .5;
-    padding: 8px;
-    margin-bottom: 10px;
+  outline: none;
+  opacity: 0.7;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
 }
 
 .icon-bar button:hover {
@@ -199,19 +200,42 @@ h1:after {
 
 .icon-bar button.active {
   opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
 
-.icon-bar .dark-mode-btn{
+.dark-mode .icon-bar button.active {
   opacity: 1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
 }
 
-.dark-mode .icon-bar .dark-mode-btn{
-  opacity: .5;
+.icon-bar .dark-mode-btn {
+  opacity: 0.7;
 }
 
-
-.dark-mode-btn img{
+.dark-mode-btn img {
   width: 48px;
   height: 48px;
   opacity: 1;
+}
+
+.dark-mode {
+  background: url("../images/night-bg.jpg");
+  background-size: 100% 100%;
+}
+.dark-mode   h1 {
+  color: #ddd;
+  text-shadow: 0.03em 0.03em 0 rgba(2, 2, 2, 0.774);
+}
+
+.dark-mode  header h1:after {
+
+  background: linear-gradient( 45deg, transparent 45%, rgb(255, 255, 255) 45%, rgb(255, 255, 255) 55%, transparent 0 );
+  background-size: 0.05em 0.05em;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.dark-mode button {
+  background: #ccc;
 }
