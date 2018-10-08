@@ -10,4 +10,4 @@ Just a bunch of ridiculousness rolled up in this one.
 
 ---
 
-If a bug got you stressed out, let splash help take away the anxiety.
+**Note**: If a bug got you stressed out, let splash help take away the anxiety. If you have an old PR please sync it with actual version of master to fix conflicts !
