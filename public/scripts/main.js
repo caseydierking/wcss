@@ -1,9 +1,10 @@
 // List of edible items
-var FOOD_LIST = ['apple', 'carrot', 'hay'];
+var FOOD_LIST = ['apple','carrot','hay','pumpkin'];
 
 window.onload = () => {
     makePoo();
 };
+
 
 document.addEventListener("DOMContentLoaded", function(){
     checkIfNightTime();
