@@ -95,7 +95,7 @@ body {
   height: 1rem;
   overflow: hidden;
   font-size: 0.75rem;
-  background-color: #22292f;
+  background-color: #22292F;
   border-radius: 0.25rem;
 }
 
@@ -109,7 +109,7 @@ body {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #f6993f;
+  background-color: #F6993F;
   transition: width 0.6s ease;
 }
 
@@ -219,7 +219,7 @@ header h1:after {
 }
 
 .dark-mode {
-  background: url("../images/night-bg.jpeg");
+  background: url("../images/night-bg.jpg");
   background-size: 100% 100%;
 }
 .dark-mode   h1 {

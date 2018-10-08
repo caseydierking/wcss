@@ -1,5 +1,5 @@
 // List of edible items
-var FOOD_LIST = ['apple','carrot','hay'];
+var FOOD_LIST = ['apple', 'carrot', 'hay'];
 
 window.onload = () => {
     makePoo();
@@ -16,52 +16,51 @@ document.addEventListener("DOMContentLoaded", function (event) {
     document.onmouseover = function () {
         audio.play();
     };
+
+    checkIfNightTime();
 });
 
-function checkIfNightTime()
-{
+function checkIfNightTime() {
     var currentHours = new Date().getHours();
     var isCurrentlyNightTime = (currentHours >= 18 || currentHours <= 8);
     var bodyElement = document.querySelector('body');
     var isNightTimeAlreadyToggled = bodyElement.classList.contains('dark-mode');
 
-    if(isCurrentlyNightTime && !isNightTimeAlreadyToggled)
-    {
-        bodyElement.classList.add("dark-mode");
+    if (isCurrentlyNightTime && !isNightTimeAlreadyToggled) {
+        bodyElement.classList.add('dark-mode');
     }
-    else if(!isCurrentlyNightTime && isNightTimeAlreadyToggled)
-    {
-        bodyElement.classList.remove("dark-mode");
+    else if (!isCurrentlyNightTime && isNightTimeAlreadyToggled) {
+        bodyElement.classList.remove('dark-mode');
     }
 }
 setInterval(checkIfNightTime, 5 * 60 * 1000);
 
 function changeCursor(elem,type) {
     document.getElementsByClassName('horse')[0].className = 'horse ' + type;
-    var elems = document.querySelectorAll(".icon-bar button");
+    var elems = document.querySelectorAll('.icon-bar button');
     [].forEach.call(elems, function (el) {
-        el.classList.remove("active");
+        el.classList.remove('active');
     });
     elem.classList.add('active');
 }
 
 function checkFood(item) {
-  return FOOD_LIST.includes(item);
+    return FOOD_LIST.includes(item);
 }
 
 function onHorseMouseDown(img) {
     var element = img.parentElement;
-    var isFood = checkFood(element.classList[element.classList.length-1]);
+    var isFood = checkFood(element.classList[element.classList.length - 1]);
     if (isFood) {
-        element.classList.add("active");
+        element.classList.add('active');
     }
 }
 
 function onHorseMouseUp(img) {
-    img.parentElement.classList.remove("active");
+    img.parentElement.classList.remove('active');
 }
 
-document.querySelector('.dark-mode-btn').addEventListener('click', function(){
+document.querySelector('.dark-mode-btn').addEventListener('click', function () {
     document.querySelector('body').classList.toggle('dark-mode');
 });
 
