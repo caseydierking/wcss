@@ -1,4 +1,4 @@
-![Build Status](https://gitlab.com/pages/plain-html/badges/master/build.svg)
+[ ![Codeship Status for caseydierking/wcss](https://app.codeship.com/projects/2824e4d0-accd-0136-7476-3a0d14b51224/status?branch=master)](https://app.codeship.com/projects/309450)
 
 ---
 
