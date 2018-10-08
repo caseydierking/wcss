@@ -120,15 +120,7 @@ body {
 }
 
 .progress-bar-striped {
-  background-image: linear-gradient(
-  45deg,
-  rgba(255, 255, 255, 0.15) 25%,
-  transparent 25%,
-  transparent 50%,
-  rgba(255, 255, 255, 0.15) 50%,
-  rgba(255, 255, 255, 0.15) 75%,
-  transparent 75%,
-  transparent
+  background-image: linear-gradient( 45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent
   );
   background-size: 1rem 1rem;
 }
@@ -238,4 +230,12 @@ header h1:after {
 }
 .dark-mode button {
   background: #ccc;
+}
+
+.poop {
+  padding: 0;
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 15px;
 }
