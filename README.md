@@ -6,6 +6,8 @@ Winning Colors Splish Splash
 
 *The unofficial official Hacktoberfest Horse.*
 
+https://winningcolors.herokuapp.com/
+
 Just a bunch of ridiculousness rolled up in this one.
 
 ---
