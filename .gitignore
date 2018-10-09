@@ -1,0 +1,10 @@
+# Basic GitIgnore
+*.zip
+*.log
+*.env
+*.tar
+*.tar.gz
+.DS_Store
+error_log
+node_modules/
+npm_logs
