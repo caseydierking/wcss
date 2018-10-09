@@ -1,11 +1,13 @@
 "use strict";
 // List of edible items
 var FOOD_LIST = ['apple','carrot','hay','pumpkin'];
+const weatherList = document.querySelectorAll('.weather');
 
 
 
 window.onload = () => {
     makePoo();
+    loadWeather();
 };
 
 
@@ -97,3 +99,19 @@ const cleanUpPoo = (poop) => {
         poop.style.display = 'none';
     }
 };
+
+const loadWeather = () => {
+    for(let weather of weatherList){
+        weather.addEventListener('click', () => {
+            const audio = document.querySelector('audio');
+            audio.volume = 0.05;
+            const audioSrc = document.querySelector('#audioSource');
+            let music = weather.id === 'sun' ? 'bliss' : weather.id;
+
+            audioSrc.src = `audio/${music}.mp3`;
+            audio.load();
+            audio.play();
+        }
+    )}
+    
+}
