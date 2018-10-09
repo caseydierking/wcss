@@ -13,13 +13,24 @@ body {
 }
 
 .horse {
-  background-color: olivedrab;
+
   width: 80%;
   margin: 0 auto;
   border-radius: 20px;
   padding: 50px;
 }
 
+.sun {
+  background-color: olivedrab;
+}
+
+.snow {
+  background-image: url("../images/snow-bg.jpg");
+}
+
+.rain {
+  background-image: url("../images/rain-bg.jpg");
+}
 
 .mouth {
  position: absolute;

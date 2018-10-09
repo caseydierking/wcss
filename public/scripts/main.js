@@ -2,37 +2,32 @@
 // List of edible items
 var FOOD_LIST = ['apple','carrot','hay','pumpkin'];
 const weatherList = document.querySelectorAll('.weather');
-
-
+const audio = document.querySelector('audio');
 
 window.onload = () => {
     makePoo();
     loadWeather();
 };
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
+document.addEventListener("DOMContentLoaded", function (event) {
+    setUpAudio();
     checkIfNightTime();
 });
 
-document.addEventListener("DOMContentLoaded", function (event) {
+const setUpAudio = () => {
     var song = ['audio/Horse-and-carriage-passing-by.mp3', 'audio/Horse-hooves-sound.mp3', 'audio/Horse-sound-effect.mp3'];
     var songRandom = song[Math.floor(Math.random() * song.length)];
-    var audio = document.querySelector('audio');
     audio.volume = 0.05;
     audio.src = songRandom;
     audio.type = "audio/mpeg";
+    
     audio.addEventListener('ended', function () {
         audio.src = 'audio/bliss.mp3';
     });
     document.onmouseover = function () {
         audio.play();
     };
-
-    checkIfNightTime();
-});
+}
 
 function checkIfNightTime() {
     var currentHours = new Date().getHours();
@@ -103,14 +98,15 @@ const cleanUpPoo = (poop) => {
 const loadWeather = () => {
     for(let weather of weatherList){
         weather.addEventListener('click', () => {
-            const audio = document.querySelector('audio');
-            audio.volume = 0.05;
-            const audioSrc = document.querySelector('#audioSource');
             let music = weather.id === 'sun' ? 'bliss' : weather.id;
+            audio.src = `audio/${music}.mp3`;
 
-            audioSrc.src = `audio/${music}.mp3`;
+            audio.loop = "true";
             audio.load();
             audio.play();
+
+            let background = document.querySelector('#horseBg');
+            background.className = `horse text-center ${weather.id}`
         }
     )}
     
