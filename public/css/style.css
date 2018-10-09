@@ -32,6 +32,14 @@ body {
   z-index: 2;
 }
 
+.pumpkin{
+  cursor: url(../images/pumpkin.svg) 32 32, auto;
+}
+
+.pumpkin.active{
+  cursor: url(../images/pumpkin.svg) 32 32, auto;
+}
+
 .apple {
   cursor: url(../images/apple.svg) 32 32, auto;
 }
