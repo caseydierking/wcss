@@ -12,7 +12,8 @@ Just a bunch of ridiculousness rolled up in this one.
 
 ---
 
-### Todo
+### Roadmap / Todo
+**Note:** You can also check the "Issues" tab to see things that need to be done that are not on this list.
 
 - [ ] Animate each body part while stationary (e.g. eyes move, tail wags, muscles twitch, etc)
 - [ ] Ability to drag and drop horse around grass, stable, pen
