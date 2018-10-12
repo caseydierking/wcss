@@ -45,13 +45,21 @@ function checkIfNightTime() {
 }
 setInterval(checkIfNightTime, 5 * 60 * 1000);
 
-function changeCursor(elem, type) {
-  document.getElementsByClassName("horse")[0].className = "horse " + type;
-  var elems = document.querySelectorAll(".icon-bar button");
-  [].forEach.call(elems, function(el) {
-    el.classList.remove("active");
-  });
-  elem.classList.add("active");
+
+function changeCursor(elem,type) {
+
+    document.getElementsByClassName('horse')[0].className = 'horse ' + type;
+    var elems = document.querySelectorAll('.icon-bar');
+    [].forEach.call(elems, function (el) {
+        el.classList.remove('active');
+      //  el.classList.remove('animated');
+       // el.classList.remove('tada');
+
+    });
+    elem.classList.add('active');
+   // elem.classList.add('animated');
+   // elem.classList.add('tada');
+
 }
 
 function checkFood(item) {
@@ -105,5 +113,9 @@ clapCounter = document.querySelector('.clapCounter');
 
 clapBtn.addEventListener('click', function(){
     clapCounter.textContent = clap ++;
+    setTimeout(function () {
+        clapCounter.classList.remove('pulse');
+    }, 200);
+    clapCounter.classList.add('animated', 'pulse', 'faster');
 });
 
