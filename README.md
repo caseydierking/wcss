@@ -32,7 +32,7 @@ Just a bunch of ridiculousness rolled up in this one.
 - [ ] Give the horse the ability to buck!
 
 
-[] Create a 2D text field and allow the horse to eat items on the ground (like a zelda/pokemon interface)
+- [ ] Create a 2D text field and allow the horse to eat items on the ground (like a zelda/pokemon interface)
 
 
 ### Contribution
