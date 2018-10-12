@@ -6,9 +6,21 @@ var eyelid = document.getElementById("eyelid");
 
 document.body.addEventListener("keydown", function(wink) {
   if (wink.keyCode == 32) {
-    setTimeout(function() {
-      eyelid.style.animationName = "eyelid";
-    }, 200);
-    eyelid.style.animationName = "";
+    eyeWink();
   }
 });
+
+// Description Eye Wink method
+function eyeWink(){
+  setTimeout(function () {
+    eyelid.style.animationName = "eyelid";
+  }, 200);
+  eyelid.style.animationName = "";
+};
+
+// Animation of body parts - On LOOP
+
+// Eyes movement
+setInterval(function () {
+  eyeWink();
+}, 5000);
