@@ -15,9 +15,7 @@ Just a bunch of ridiculousness rolled up in this one.
 ### Todo
 
 - [ ] Animate each body part while stationary (e.g. eyes move, tail wags, muscles twitch, etc)
-
 - [ ] Ability to drag and drop horse around grass, stable, pen
-
 - [ ] You can paint the horse different colors
 - [ ] You can save the picture into a repository for others to view (download and upload functionality)
 - [ ] You can control the horse via arrow buttons
@@ -30,10 +28,9 @@ Just a bunch of ridiculousness rolled up in this one.
 - [ ] Have the horse sprout some wings and unicorn
 - [ ] Give the horse the ability to eat some hay
 - [ ] Give the horse the ability to buck!
-
-
 - [ ] Create a 2D text field and allow the horse to eat items on the ground (like a zelda/pokemon interface)
 
+**Checkbox Tip**: Do add 'x' in square brackets to show the checkbox. eg. `[x]`
 
 ### Contribution
 
