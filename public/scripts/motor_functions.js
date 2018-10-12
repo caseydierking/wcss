@@ -4,8 +4,7 @@
 
 var eyelid = document.getElementById("eyelid");
 
-document.body.addEventListener("keydown", function myFunction(wink) {
-  wink.preventDefault();
+document.body.addEventListener("keydown", function(wink) {
   if (wink.keyCode == 32) {
     setTimeout(function() {
       eyelid.style.animationName = "eyelid";
