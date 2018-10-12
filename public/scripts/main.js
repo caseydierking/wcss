@@ -52,11 +52,16 @@ setInterval(checkIfNightTime, 5 * 60 * 1000);
 function changeCursor(elem,type) {
 
     document.getElementsByClassName('horse')[0].className = 'horse ' + type;
-    var elems = document.querySelectorAll('.icon-bar button');
+    var elems = document.querySelectorAll('.icon-bar');
     [].forEach.call(elems, function (el) {
         el.classList.remove('active');
+      //  el.classList.remove('animated');
+       // el.classList.remove('tada');
+
     });
     elem.classList.add('active');
+   // elem.classList.add('animated');
+   // elem.classList.add('tada');
 
 }
 
