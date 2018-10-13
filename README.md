@@ -15,7 +15,13 @@ Just a bunch of ridiculousness rolled up in this one.
 ### Roadmap / Todo
 **Note:** You can also check the "Issues" tab to see things that need to be done that are not on this list.
 
-- [ ] Animate each body part while stationary (e.g. eyes move, tail wags, muscles twitch, etc)
+- [ ] Animate each body part while stationary
+
+    - [x] Eyes movement
+    - [ ] Tail wags
+    - [ ] Muscles twitch
+    - [ ] Foot Tap
+
 - [ ] Ability to drag and drop horse around grass, stable, pen
 - [ ] You can paint the horse different colors
 - [ ] You can save the picture into a repository for others to view (download and upload functionality)
@@ -36,3 +42,7 @@ Just a bunch of ridiculousness rolled up in this one.
 ### Contribution
 
 If a bug got you stressed out, let splash help take away the anxiety. If you have an old PR please [sync](https://help.github.com/articles/syncing-a-fork/) it with actual version of **master** to fix conflicts !
+
+### License
+
+- [MIT](https://github.com/caseydierking/wcss/blob/master/LICENSE.txt)
