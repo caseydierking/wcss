@@ -1,0 +1,20 @@
+canvas {
+    border: 1px solid #d3d3d3;
+    background-color: #60af28;
+}
+
+.game-bar {
+    height: 100%;
+    position: fixed;
+    width: 64px;
+    left: 24px;
+}
+
+.game-bar button {
+    outline: none;
+    opacity: 0.7;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #ddd;
+}
