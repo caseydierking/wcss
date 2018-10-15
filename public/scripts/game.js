@@ -1,6 +1,15 @@
 var myGamePiece;
 var cycleThroughPhotos = 0
 
+//To add components to the canvas, follow the steps below:
+//1. Declare variable at the top of the page.
+// example: var apple;
+//2. Add a new component in the startGame() function.
+// example: apple = new component(200, 200, "images/apple.png", 200, 200, "image");
+//3. Add item to the updateGameArea() function.
+// example:  apple.newPos(); 
+//           apple.update();
+
 function startGame() {
     
     var horse = document.getElementById("horse-div")
@@ -73,6 +82,7 @@ function updateGameArea() {
     if (myGameArea.key && myGameArea.key == 40) {movedown();}
     myGamePiece.newPos();
     myGamePiece.update();
+    
 }
 
 
