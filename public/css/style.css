@@ -22,25 +22,26 @@ body {
 
 
 .mouth {
- position: absolute;
- width: 60px;
- height: 50px;
- right: 7%;
- top: 45%;
- z-index: 2;
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  right: 7%;
+  top: 45%;
+  z-index: 2;
 }
 
-.pumpkin{
+.pumpkin {
   cursor: url(../images/pumpkin.svg) 32 32, auto;
 }
 
-.pumpkin.active{
+.pumpkin.active {
   cursor: url(../images/pumpkin.svg) 32 32, auto;
 }
 
 .apple {
   cursor: url(../images/apple.svg) 32 32, auto;
 }
+
 .apple.active {
   cursor: url(../images/apple_active.svg) 32 32, auto;
 }
@@ -77,10 +78,22 @@ body {
   cursor: url(../images/pitchfork_active.svg) 32 32, auto;
 }
 
+.applause-button {
+  height: 64px;
+  width: 64px;
+  background-color: #ddd;
+  outline: none;
+  opacity: 0.7;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
   }
+
   to {
     background-position: 0 0;
   }
@@ -90,6 +103,7 @@ body {
   from {
     background-position: 1rem 0;
   }
+
   to {
     background-position: 0 0;
   }
@@ -103,6 +117,10 @@ body {
   font-size: 0.75rem;
   background-color: #22292F;
   border-radius: 0.25rem;
+}
+
+.dark-mode .text-changer {
+  color: white;
 }
 
 .progress-bar {
@@ -126,8 +144,7 @@ body {
 }
 
 .progress-bar-striped {
-  background-image: linear-gradient( 45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent
-  );
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 1rem 1rem;
 }
 
@@ -147,9 +164,11 @@ header h1 {
   font-size: 4em;
   text-shadow: 0.03em 0.03em 0 hsla(210, 40%, 98%, 1);
 }
+
 header h1:not(:last-child) {
   margin-right: 1rem;
 }
+
 header h1:after {
   content: attr(data-shadow);
   position: absolute;
@@ -157,7 +176,7 @@ header h1:after {
   left: 0.06em;
   z-index: -1;
   text-shadow: none;
-  background: linear-gradient( 45deg, transparent 45%, hsla(208, 16%, 16%, 1) 45%, hsla(208, 16%, 16%, 1) 55%, transparent 0 );
+  background: linear-gradient(45deg, transparent 45%, hsla(208, 16%, 16%, 1) 45%, hsla(208, 16%, 16%, 1) 55%, transparent 0);
   background-size: 0.05em 0.05em;
   background-clip: text;
   -webkit-background-clip: text;
@@ -170,6 +189,7 @@ header h1:after {
   0% {
     background-position: 0 0;
   }
+
   0% {
     background-position: 100% -100%;
   }
@@ -220,20 +240,22 @@ header h1:after {
   background: url("../images/night-bg.jpg");
   background-size: 100% 100%;
 }
-.dark-mode   h1 {
+
+.dark-mode h1 {
   color: #ddd;
   text-shadow: 0.03em 0.03em 0 rgba(2, 2, 2, 0.774);
 }
 
-.dark-mode  header h1:after {
+.dark-mode header h1:after {
 
-  background: linear-gradient( 45deg, transparent 45%, rgb(255, 255, 255) 45%, rgb(255, 255, 255) 55%, transparent 0 );
+  background: linear-gradient(45deg, transparent 45%, rgb(255, 255, 255) 45%, rgb(255, 255, 255) 55%, transparent 0);
   background-size: 0.1em 0.1em;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
 }
+
 .dark-mode button {
   background: #ccc;
 }
