@@ -12,10 +12,8 @@ var cycleThroughPhotos = 0
 
 var apple;
 var hay;
-var brush;
 var carrot;
 var pumpkin;
-var pitchfork;
 
 function startGame() {
     
@@ -30,10 +28,8 @@ function startGame() {
     //adding new components to the canvas
     apple = new component(30,30, "images/apple.svg", 100, 250, "image");
     hay = new component(50,50,"images/hay.svg", 350,400, "image");
-    brush = new component(35,35,"images/brush.svg", 500,150, "image");
     carrot = new component(25,25,"images/carrot.svg", 50,350, "image");
     pumpkin = new component(45,45,"images/pumpkin.svg", 590,50, "image");
-    pitchfork = new component(55,55,"images/pitchfork.svg", 500,200, "image");
 }
 
 var myGameArea = {
@@ -103,15 +99,10 @@ function updateGameArea() {
     apple.update();
     hay.newPos();
     hay.update();
-    brush.newPos();
-    brush.update();
     carrot.newPos();
     carrot.update();
     pumpkin.newPos();
     pumpkin.update();
-    pitchfork.newPos();
-    pitchfork.update();
-    
 }
 
 
