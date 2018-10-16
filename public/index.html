@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="h-full" lang="en">
 
 <head>
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/motor_functions.css">
+    <link rel="stylesheet" href="css/game.css">
 </head>
 
 <body class="bg-grey-lightest font-sans h-full">
@@ -38,7 +39,13 @@
                 <span class="clapCounter ml-2">0</span>
             </button>
         </div>
-        <div class="horse text-center">
+        <div class="game-bar">
+            <button type="button" onclick="startGame()"> Let's play a game.</button>
+        </div>
+        <div id="game-div" class="game-board flex items-center justify-center my-1">
+
+        </div>
+        <div id="horse-div" class="horse text-center">
             <div class="mouth" onmousedown="onHorseMouseDown(this)" onmouseup="onHorseMouseUp(this)">
             </div>
             <svg class="w-full md:w-auto horse-img" draggable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1090.21 687.62">
@@ -86,7 +93,7 @@
             <img class="poop" src="images/poop.png" onclick="cleanUpPoo(this)">
         </div>
 
-        <div class="icon-bar animated slideInRight">
+        <div id="icon-bar-div" class="icon-bar">
             <button onclick="changeCursor(this,'brush')"><img src="images/brush.svg" alt="Brush" /></button>
             <button onclick="changeCursor(this,'apple')"><img src="images/apple.svg" alt="Apple" /></button>
             <button onclick="changeCursor(this,'carrot')"><img src="images/carrot.svg" alt="Carrot" /></button>
@@ -104,6 +111,7 @@
 
     <script src="scripts/main.js"></script>
     <script src="scripts/motor_functions.js"></script>
+    <script src="scripts/game.js"></script>
 
 </body>
 
