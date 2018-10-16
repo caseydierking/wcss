@@ -105,7 +105,7 @@ const loadWeather = () => {
             audio.load();
             audio.play();
 
-            let background = document.querySelector('#horseBg');
+            let background = document.querySelector('#horse-div');
             background.className = `horse text-center ${weather.id}`
         }
     )}

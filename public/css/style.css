@@ -13,7 +13,6 @@ body {
 }
 
 .horse {
-
   width: 80%;
   margin: 0 auto;
   border-radius: 20px;
@@ -21,15 +20,15 @@ body {
 }
 
 .sun {
-  background-color: olivedrab;
+  background-image: url("../images/sun-bg.gif");
 }
 
 .snow {
-  background-image: url("../images/snow-bg.jpg");
+  background-image: url("../images/snow-bg.gif");
 }
 
 .rain {
-  background-image: url("../images/rain-bg.jpg");
+  background-image: url("../images/rain-bg.gif");
 }
 
 .mouth {
