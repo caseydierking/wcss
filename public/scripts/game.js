@@ -1,4 +1,5 @@
 var myGamePiece;
+var appleArr = [];
 var cycleThroughPhotos = 0
 
 //To add components to the canvas, follow the steps below:
@@ -19,6 +20,20 @@ function startGame() {
 
     myGameArea.start();
     myGamePiece = new component(130, 100, "images/horse-movements/horse-all.png", 10, 120, "image", 0, 0, 250, 188);
+
+    // init apples
+
+    var appleNumber = Math.random() * 10;
+    for (var i = 0; i < appleNumber; i++) {
+        var x = Math.random() * 800;
+        var y = Math.random() * 550;
+        var apple = new component(100, 80, "images/apple.svg", x, y, "image", 0, 0, 250, 188);
+        appleArr.push({
+            x: x,
+            y: y,
+            apple: apple
+        })
+    }
 }
 
 var myGameArea = {
@@ -90,6 +105,15 @@ function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cr
     this.newPos = function () {
         this.x += this.speedX;
         this.y += this.speedY;
+
+        // if horse close to the apple, remove apple from appleArr
+        appleArr.forEach(
+            (apple, index, object) => {
+                if (Math.abs(this.x - apple.x) < 100 && Math.abs(this.y - apple.y) < 100) {
+                    object.splice(index, 1);
+                }
+            }
+        )
     }
 }
 
@@ -109,6 +133,12 @@ function updateGameArea() {
     if (myGameArea.key && myGameArea.key == 40) {
         movedown();
     }
+    
+    appleArr.forEach(
+        (appleObj) => {
+            appleObj.apple.update();
+        }
+    )
     myGamePiece.newPos();
     myGamePiece.update();
 
@@ -154,7 +184,7 @@ function moveleft() {
 
     if (cycleThroughPhotos <= 5) {
         myGamePiece.cropx = 250;
-        console.log(myGamePiece);
+        // console.log(myGamePiece);
     } else if (cycleThroughPhotos < 10) {
         myGamePiece.cropx = 500;
     } else if (cycleThroughPhotos < 15) {
