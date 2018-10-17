@@ -245,3 +245,12 @@ header h1:after {
   bottom: 50px;
   left: 15px;
 }
+
+.horse-img,
+.poop {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
