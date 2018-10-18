@@ -1,6 +1,6 @@
 var myGamePiece;
 var appleArr = [];
-var cycleThroughPhotos = 0
+var cycleThroughPhotos = 0;
 
 //To add components to the canvas, follow the steps below:
 //1. Declare variable at the top of the page.
@@ -8,15 +8,14 @@ var cycleThroughPhotos = 0
 //2. Add a new component in the startGame() function.
 // example: apple = new component(200, 200, "images/apple.png", 200, 200, "image");
 //3. Add item to the updateGameArea() function.
-// example:  apple.newPos(); 
+// example:  apple.newPos();
 //           apple.update();
 
 function startGame() {
-
-    var horse = document.getElementById("horse-div")
-    horse.style.display = "none"
-    var iconBar = document.getElementById("icon-bar-div")
-    iconBar.style.display = "none"
+    var horse = document.getElementById("horse-div");
+    horse.style.display = "none";
+    var iconBar = document.getElementById("icon-bar-div");
+    iconBar.style.display = "none";
 
     myGameArea.start();
     myGamePiece = new component(130, 100, "images/horse-movements/horse-all.png", 10, 120, "image", 0, 0, 250, 188);
@@ -32,7 +31,7 @@ function startGame() {
             x: x,
             y: y,
             apple: apple
-        })
+        });
     }
 }
 
@@ -42,20 +41,22 @@ var myGameArea = {
         this.canvas.width = 800;
         this.canvas.height = 550;
         this.context = this.canvas.getContext("2d");
-        document.getElementById("game-div").appendChild(this.canvas)
+        document.getElementById("game-div").appendChild(this.canvas);
         //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
-        window.addEventListener('keydown', function (e) {
+        window.addEventListener("keydown", function (e) {
             myGameArea.key = e.keyCode;
-        })
-        window.addEventListener('keyup', function (e) {
+            myGameArea.shiftKey = e.shiftKey;
+        });
+        window.addEventListener("keyup", function (e) {
             myGameArea.key = false;
-        })
+            myGameArea.shiftKey = false;
+        });
     },
     clear: function () {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
-}
+};
 
 function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cropheight) {
     this.type = type;
@@ -69,7 +70,7 @@ function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cr
     this.speedY = 0;
     this.x = x;
     this.y = y;
-    if (typeof cropx != 'undefined') {
+    if (typeof cropx != "undefined") {
         this.cropx = cropx;
         this.cropy = cropy;
         this.cropwidth = cropwidth;
@@ -78,72 +79,90 @@ function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cr
     this.update = function () {
         ctx = myGameArea.context;
         if (type == "image") {
-            if (typeof cropx != 'undefined') {
-                ctx.drawImage(this.image,
-                    this.cropx,
-                    this.cropy,
-                    this.cropwidth,
-                    this.cropheight,
-                    this.x,
-                    this.y,
-                    this.width,
-                    this.height
-                );
+            if (typeof cropx != "undefined") {
+                ctx.drawImage(this.image, this.cropx, this.cropy, this.cropwidth, this.cropheight, this.x, this.y, this.width, this.height);
             } else {
-                ctx.drawImage(this.image,
-                    this.x,
-                    this.y,
-                    this.width,
-                    this.height);
+                ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
             }
-
         } else {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
         }
     }
+        ;
     this.newPos = function () {
         this.x += this.speedX;
         this.y += this.speedY;
 
         // if horse close to the apple, remove apple from appleArr
-        appleArr.forEach(
-            (apple, index, object) => {
-                if (Math.abs(this.x - apple.x) < 100 && Math.abs(this.y - apple.y) < 100) {
-                    object.splice(index, 1);
-                }
+        appleArr.forEach((apple, index, object) => {
+            if (Math.abs(this.x - apple.x) < 100 && Math.abs(this.y - apple.y) < 100) {
+                object.splice(index, 1);
             }
-        )
+        }
+        );
     }
+        ;
 }
 
-function updateGameArea() {
+function updateGameArea(e) {
     myGameArea.clear();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if (myGameArea.key && myGameArea.key == 37) {
         moveleft();
+        if (myGameArea.shiftKey) {
+            checkAdvanceKeys("left");
+        }
     }
+
     if (myGameArea.key && myGameArea.key == 39) {
         moveright();
+        if (myGameArea.shiftKey) {
+            checkAdvanceKeys("right");
+        }
     }
     if (myGameArea.key && myGameArea.key == 38) {
         moveup();
+        if (myGameArea.shiftKey) {
+            checkAdvanceKeys("up");
+        }
     }
     if (myGameArea.key && myGameArea.key == 40) {
         movedown();
-    }
-    
-    appleArr.forEach(
-        (appleObj) => {
-            appleObj.apple.update();
+        if (myGameArea.shiftKey) {
+            checkAdvanceKeys("down");
         }
-    )
+    }
+
+    appleArr.forEach(appleObj => {
+        appleObj.apple.update();
+    }
+    );
     myGamePiece.newPos();
     myGamePiece.update();
 
-}
+    /**
+   * @description Binding Arrow keys with another keys
+   */
 
+    function checkAdvanceKeys(input) {
+        switch (input) {
+            case "left":
+                myGamePiece.speedX = -3;
+                break;
+            case "right":
+                myGamePiece.speedX = 3;
+                break;
+            case "up":
+                myGamePiece.speedY = -3;
+                break;
+            case "down":
+                myGamePiece.speedY = 3;
+                break;
+        }
+    }
+}
 
 function moveup() {
     myGamePiece.cropy = 564;
@@ -173,7 +192,7 @@ function movedown() {
     } else if (cycleThroughPhotos < 20) {
         myGamePiece.cropx = 0;
     } else if (cycleThroughPhotos > 25) {
-        cycleThroughPhotos = 0
+        cycleThroughPhotos = 0;
     }
     myGamePiece.speedY += 1;
     cycleThroughPhotos += 1;
