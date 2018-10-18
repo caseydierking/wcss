@@ -35,8 +35,13 @@
                 <img src="http://www.cutercounter.com/hit.php?id=gueaxcpa&nd=6&style=125" alt="View counter">
             </a>
         </div>
-        <div class="game-bar">
-            <button type="button" onclick="startGame()"> Let's play a game.</button>
+        <div id="left-icon-bar-div" class="icon-bar icon-bar-left">
+             <button><img src="images/sun.svg" alt="Sun" id="sun" class="weather"/></button>
+             <button><img src="images/snow.svg" alt="Snow" id="snow" class="weather"/></button>
+             <button><img src="images/rain.svg" alt="Rain" id="rain" class="weather"/></button>
+             <div class="game-bar">
+                <button type="button" onclick="startGame()"> Let's play a game.</button>
+             </div>
         </div>
         <div id="game-div" class="game-board flex items-center justify-center my-1">
             
@@ -90,16 +95,13 @@
             <img class="poop" src="images/poop.png" onclick="cleanUpPoo(this)">
         </div>
 
-        <div id="icon-bar-div" class="icon-bar">
+        <div id="right-icon-bar-div" class="icon-bar icon-bar-right">
             <button onclick="changeCursor(this,'brush')"><img src="images/brush.svg" alt="Brush" /></button>
             <button onclick="changeCursor(this,'apple')"><img src="images/apple.svg" alt="Apple" /></button>
             <button onclick="changeCursor(this,'carrot')"><img src="images/carrot.svg" alt="Carrot" /></button>
             <button onclick="changeCursor(this,'hay')"><img src="images/hay.svg" alt="Hay" /></button>
             <button onclick="changeCursor(this,'pitchfork')"><img src="images/pitchfork.svg" alt="Pitchfork" /></button>
             <button onclick="changeCursor(this,'pumpkin')"><img src="images/pumpkin.svg"/></button>
-			<button><img src="images/sun.svg" alt="Sun" id="sun" class="weather"/></button>
-            <button><img src="images/snow.svg" alt="Snow" id="snow" class="weather"/></button>
-            <button><img src="images/rain.svg" alt="Rain" id="rain" class="weather"/></button>
             <button class="dark-mode-btn"><img src="images/light-on.svg" alt="Toggle light"></button>
         </div>
     </div>

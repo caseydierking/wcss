@@ -3,6 +3,8 @@
 var FOOD_LIST = ['apple','carrot','hay','pumpkin'];
 const weatherList = document.querySelectorAll('.weather');
 const audio = document.querySelector('audio');
+let currentWeather ='sun';
+let currentCursor = 'text-center';
 
 window.onload = () => {
     makePoo();
@@ -49,7 +51,10 @@ setInterval(checkIfNightTime, 5 * 60 * 1000);
 function changeCursor(elem,type) {
     elem.classList.add('animated');
     elem.classList.add('tada');
-    document.getElementsByClassName('horse')[0].className = 'horse ' + type;
+
+    currentCursor = type;
+    updateBackground();
+
     setTimeout(function(){
         elem.classList.remove('animated');
         elem.classList.remove('tada');
@@ -98,16 +103,23 @@ const cleanUpPoo = (poop) => {
 const loadWeather = () => {
     for(let weather of weatherList){
         weather.addEventListener('click', () => {
-            let music = weather.id === 'sun' ? 'bliss' : weather.id;
-            audio.src = `audio/${music}.mp3`;
-
-            audio.loop = "true";
-            audio.load();
-            audio.play();
-
-            let background = document.querySelector('#horse-div');
-            background.className = `horse text-center ${weather.id}`
+            currentWeather = weather.id;
+            playWeatherMusic();
+            updateBackground();
         }
     )}
-    
+}
+
+const playWeatherMusic = () => {
+    let music = currentWeather === 'sun' ? 'bliss' : currentWeather;
+    audio.src = `audio/${music}.mp3`;
+
+    audio.loop = "true";
+    audio.load();
+    audio.play();
+}
+
+const updateBackground = () => {
+    let background = document.querySelector('#horse-div');
+    background.className = `horse ${currentWeather} ${currentCursor}`
 }

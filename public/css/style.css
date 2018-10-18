@@ -188,9 +188,17 @@ header h1:after {
 .icon-bar {
   height: 100%;
   position: fixed;
-  right: 32px;
   width: 64px;
   top: 32px;
+}
+
+.icon-bar-right {
+  right: 32px;
+}
+
+.icon-bar-left {
+  top: 82px;
+  left: 24px;
 }
 
 .icon-bar button {
