@@ -13,10 +13,16 @@ var cycleThroughPhotos = 0
 
 function startGame() {
 
-    var horse = document.getElementById("horse-div")
-    horse.style.display = "none"
-    var iconBar = document.getElementById("icon-bar-div")
-    iconBar.style.display = "none"
+    var horse = document.getElementById("horse-div");
+    horse.style.display = "none";
+    var game = document.getElementById("game-div");
+    game.style.display = "flex";
+    var iconBar = document.getElementById("icon-bar-div");
+    iconBar.style.display = "none";
+    var stopGameButton = document.getElementById("stop-game-button");
+    stopGameButton.style.display = "block";
+    var startGameButton = document.getElementById("start-game-button");
+    startGameButton.style.display = "none";
 
     myGameArea.start();
     myGamePiece = new component(130, 100, "images/horse-movements/horse-all.png", 10, 120, "image", 0, 0, 250, 188);
@@ -34,6 +40,23 @@ function startGame() {
             apple: apple
         })
     }
+}
+
+function stopGame() {
+    var game = document.getElementById("game-div");
+    game.style.display = "none";
+
+    var horse = document.getElementById("horse-div");
+    horse.style.display = "block";
+
+    var iconBar = document.getElementById("icon-bar-div");
+    iconBar.style.display = "block";
+
+    var startGameButton = document.getElementById("start-game-button");
+    startGameButton.style.display = "block";
+
+    var stopGameButton = document.getElementById("stop-game-button");
+    stopGameButton.style.display = "none";
 }
 
 var myGameArea = {
