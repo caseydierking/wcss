@@ -1,14 +1,11 @@
 "use strict";
 // List of edible items
-var FOOD_LIST = ['apple','carrot','hay','pumpkin'];
+var FOOD_LIST = ['apple', 'carrot', 'hay', 'pumpkin'];
 
 
-
-window.onload = () => {
+window.onload = function () {
     makePoo();
 };
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -46,14 +43,15 @@ function checkIfNightTime() {
         bodyElement.classList.remove('dark-mode');
     }
 }
+
 setInterval(checkIfNightTime, 5 * 60 * 1000);
 
 
-function changeCursor(elem,type) {
+function changeCursor(elem, type) {
     elem.classList.add('animated');
     elem.classList.add('tada');
     document.getElementsByClassName('horse')[0].className = 'horse ' + type;
-    setTimeout(function(){
+    setTimeout(function () {
         elem.classList.remove('animated');
         elem.classList.remove('tada');
     }, 1500);
@@ -81,18 +79,18 @@ document.querySelector('.dark-mode-btn').addEventListener('click', function () {
     document.querySelector('body').classList.toggle('dark-mode');
 });
 
-const makePoo = () => {
-    let rand = Math.round(Math.random() * (10000) + 20000);
-    setTimeout(function() {
+var makePoo = function () {
+    var rand = Math.round(Math.random() * (10000) + 20000);
+    setTimeout(function () {
         makePoo();
-        const poop = document.getElementsByClassName('poop')[0];
-        const displayStyle = window.getComputedStyle(poop).getPropertyValue('display');
+        var poop = document.getElementsByClassName('poop')[0];
+        var displayStyle = window.getComputedStyle(poop).getPropertyValue('display');
         poop.style.display = displayStyle === 'none' ? 'inline' : displayStyle;
     }, rand);
 };
 
-const cleanUpPoo = (poop) => {
-    const cursorType = document.getElementsByClassName('horse')[0].className;
+var cleanUpPoo = function (poop) {
+    var cursorType = document.getElementsByClassName('horse')[0].className;
     if (cursorType === 'horse pitchfork') {
         poop.style.display = 'none';
     }

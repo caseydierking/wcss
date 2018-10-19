@@ -103,17 +103,16 @@ function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cr
         }
     }
     this.newPos = function () {
+        var self = this;
         this.x += this.speedX;
         this.y += this.speedY;
 
         // if horse close to the apple, remove apple from appleArr
-        appleArr.forEach(
-            (apple, index, object) => {
-                if (Math.abs(this.x - apple.x) < 100 && Math.abs(this.y - apple.y) < 100) {
-                    object.splice(index, 1);
-                }
+        appleArr.forEach(function (apple, index, object) {
+            if (Math.abs(self.x - apple.x) < 100 && Math.abs(self.y - apple.y) < 100) {
+                object.splice(index, 1);
             }
-        )
+        })
     }
 }
 
@@ -133,12 +132,10 @@ function updateGameArea() {
     if (myGameArea.key && myGameArea.key == 40) {
         movedown();
     }
-    
-    appleArr.forEach(
-        (appleObj) => {
-            appleObj.apple.update();
-        }
-    )
+
+    appleArr.forEach(function (appleObj) {
+        appleObj.apple.update();
+    })
     myGamePiece.newPos();
     myGamePiece.update();
 
