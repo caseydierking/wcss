@@ -8,3 +8,4 @@
 error_log
 node_modules/
 npm_logs
+.idea

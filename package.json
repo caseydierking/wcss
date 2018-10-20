@@ -1,0 +1,31 @@
+{
+  "name": "wcss",
+  "version": "1.0.0",
+  "description": "[ ![Codeship Status for caseydierking/wcss](https://app.codeship.com/projects/2824e4d0-accd-0136-7476-3a0d14b51224/status?branch=master)](https://app.codeship.com/projects/309450)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseydierking/wcss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caseydierking/wcss/issues"
+  },
+  "homepage": "https://github.com/caseydierking/wcss#readme",
+  "dependencies": {
+    "gulp-uglifycss": "^1.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-count": "^1.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-uglify": "^3.0.1"
+  }
+}

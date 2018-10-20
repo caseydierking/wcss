@@ -72,6 +72,23 @@ Our goal is to continue this project even after [Hacktoberfest](https://hacktobe
 
 **Checkbox Tip**: Do add 'x' in square brackets to show the checkbox. eg. `[x]`
 
+### Gulp
+
+Run `npm install` first
+
+Scripts and styles can now be merged and minified using Gulp, by using `gulpfile.js` to change its behaviour.
+Currently it will merge `.js` files from `/public/scripts` (in a specified order to avoid breaks) and styles inside `/public/css` as following
+
+- `/public/scripts/*.js` becoming `/public/assets/js/main.js`
+- `/public/css/*.css` becoming `/public/assets/css/app.css`
+
+then they'll be minified and included into `index.html`
+
+By running `gulp`, it will run its `default` task, including these two `concat/minify`.
+By running `gulp watch` il will run tasks from above, then serve static files from `/public` folder and watching for changes with `BrowserSync`
+
+BrowserSync folders and files to watch are listed into `gulpfile.js`
+
 ### Contribution
 
 Please check out our [Contribution Guide](https://github.com/caseydierking/wcss/blob/master/CONTRIBUTING.md) for more information on getting started.
