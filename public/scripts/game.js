@@ -45,11 +45,23 @@ var myGameArea = {
         document.getElementById("game-div").appendChild(this.canvas)
         //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
+        this.keyArr = [];
         window.addEventListener('keydown', function (e) {
-            myGameArea.key = e.keyCode;
+            if (!myGameArea.keyArr.includes(e.keyCode)) {
+              myGameArea.keyArr.push(e.keyCode);
+            }
+            myGameArea.activeKey = e.keyCode;
         })
         window.addEventListener('keyup', function (e) {
-            myGameArea.key = false;
+            if (myGameArea.keyArr.includes(e.keyCode)) {
+                myGameArea.keyArr.splice(myGameArea.keyArr.indexOf(e.keyCode), 1);
+                // if a key is released but others are still held, make the active key the most recent held one
+                if (myGameArea.keyArr.length > 0) {
+                    myGameArea.activeKey = myGameArea.keyArr[myGameArea.keyArr.length - 1];
+                } else {
+                    myGameArea.activeKey = false;
+                }
+            }
         })
     },
     clear: function () {
@@ -121,16 +133,16 @@ function updateGameArea() {
     myGameArea.clear();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if (myGameArea.key && myGameArea.key == 37) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 37) {
         moveleft();
     }
-    if (myGameArea.key && myGameArea.key == 39) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 39) {
         moveright();
     }
-    if (myGameArea.key && myGameArea.key == 38) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 38) {
         moveup();
     }
-    if (myGameArea.key && myGameArea.key == 40) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 40) {
         movedown();
     }
     
