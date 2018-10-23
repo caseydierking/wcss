@@ -39,7 +39,7 @@ Our goal is to continue this project even after [Hacktoberfest](https://hacktobe
 - [ ] Give the horse rainboots during the "rainy weather" mode
 - [ ] Give the horse a scarf and hat for "winter weather" mode
 - [ ] Have the horse neigh when given any of the fruits/veggies
-- [ ] Give the horse the ability to eat some hay
+- [x] Give the horse the ability to eat some hay
 
 ### Phase 2
 *Single pane game - foundation*
