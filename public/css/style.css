@@ -13,13 +13,23 @@ body {
 }
 
 .horse {
-  background-color: olivedrab;
   width: 80%;
   margin: 0 auto;
   border-radius: 20px;
   padding: 50px;
 }
 
+.sun {
+  background-image: url("../images/sun-bg.gif");
+}
+
+.snow {
+  background-image: url("../images/snow-bg.gif");
+}
+
+.rain {
+  background-image: url("../images/rain-bg.gif");
+}
 
 .mouth {
  position: absolute;
@@ -35,7 +45,7 @@ body {
 }
 
 .pumpkin.active{
-  cursor: url(../images/pumpkin.svg) 32 32, auto;
+  cursor: url(../images/pumpkin_active.svg) 32 32, auto;
 }
 
 .apple {
@@ -178,9 +188,17 @@ header h1:after {
 .icon-bar {
   height: 100%;
   position: fixed;
-  right: 32px;
   width: 64px;
   top: 32px;
+}
+
+.icon-bar-right {
+  right: 32px;
+}
+
+.icon-bar-left {
+  top: 82px;
+  left: 24px;
 }
 
 .icon-bar button {

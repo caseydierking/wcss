@@ -1,35 +1,35 @@
 "use strict";
 // List of edible items
-var FOOD_LIST = ["apple", "carrot", "hay", "pumpkin"];
+var FOOD_LIST = ['apple','carrot','hay','pumpkin'];
+const weatherList = document.querySelectorAll('.weather');
+const audio = document.querySelector('audio');
+let currentWeather ='sun';
+let currentCursor = 'text-center';
 
 window.onload = () => {
-  makePoo();
+    makePoo();
+    loadWeather();
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-  checkIfNightTime();
+document.addEventListener("DOMContentLoaded", function (event) {
+    setUpAudio();
+    checkIfNightTime();
 });
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  var song = [
-    "audio/Horse-and-carriage-passing-by.mp3",
-    "audio/Horse-hooves-sound.mp3",
-    "audio/Horse-sound-effect.mp3"
-  ];
-  var songRandom = song[Math.floor(Math.random() * song.length)];
-  var audio = document.querySelector("audio");
-  audio.volume = 0.05;
-  audio.src = songRandom;
-  audio.type = "audio/mpeg";
-  audio.addEventListener("ended", function() {
-    audio.src = "audio/bliss.mp3";
-  });
-  document.onmouseover = function() {
-    audio.play();
-  };
+const setUpAudio = () => {
+    var song = ['audio/Horse-and-carriage-passing-by.mp3', 'audio/Horse-hooves-sound.mp3', 'audio/Horse-sound-effect.mp3'];
+    var songRandom = song[Math.floor(Math.random() * song.length)];
+    audio.volume = 0.05;
+    audio.src = songRandom;
+    audio.type = "audio/mpeg";
 
-  checkIfNightTime();
-});
+    audio.addEventListener('ended', function () {
+        audio.src = 'audio/bliss.mp3';
+    });
+    document.onmouseover = function () {
+        audio.play();
+    };
+}
 
 function checkIfNightTime() {
   var currentHours = new Date().getHours();
@@ -49,7 +49,10 @@ setInterval(checkIfNightTime, 5 * 60 * 1000);
 function changeCursor(elem,type) {
     elem.classList.add('animated');
     elem.classList.add('tada');
-    document.getElementsByClassName('horse')[0].className = 'horse ' + type;
+
+    currentCursor = type;
+    updateBackground();
+
     setTimeout(function(){
         elem.classList.remove('animated');
         elem.classList.remove('tada');
@@ -96,22 +99,43 @@ const cleanUpPoo = poop => {
     poop.style.display = "none";
   }
 };
-
-/*
-*   Clap counter
-=============================
+/**
+* @description Clap counter
 *   Author - @adsingh14
 */
 
-let clap = 1;
-const clapBtn = document.getElementById("clapBtn"),
-clapCounter = document.querySelector('.clapCounter');
+// let clap = 1;
+// const clapBtn = document.getElementById("clapBtn"),
+// clapCounter = document.querySelector('.clapCounter');
 
-clapBtn.addEventListener('click', function(){
-    clapCounter.textContent = clap ++;
-    setTimeout(function () {
-        clapCounter.classList.remove('pulse');
-    }, 200);
-    clapCounter.classList.add('animated', 'pulse', 'faster');
-});
+// clapBtn.addEventListener('click', function(){
+//     clapCounter.textContent = clap ++;
+//     setTimeout(function () {
+//         clapCounter.classList.remove('pulse');
+//     }, 200);
+//     clapCounter.classList.add('animated', 'pulse', 'faster');
+// });
 
+const loadWeather = () => {
+    for(let weather of weatherList){
+        weather.addEventListener('click', () => {
+            currentWeather = weather.id;
+            playWeatherMusic();
+            updateBackground();
+        }
+    )}
+}
+
+const playWeatherMusic = () => {
+    let music = currentWeather === 'sun' ? 'bliss' : currentWeather;
+    audio.src = `audio/${music}.mp3`;
+
+    audio.loop = "true";
+    audio.load();
+    audio.play();
+}
+
+const updateBackground = () => {
+    let background = document.querySelector('#horse-div');
+    background.className = `horse ${currentWeather} ${currentCursor}`
+}
