@@ -95,7 +95,7 @@ const makePoo = () => {
 
 const cleanUpPoo = (poop) => {
     const cursorType = document.getElementsByClassName('horse')[0].className;
-    if (cursorType === 'horse pitchfork') {
+    if (cursorType === 'horse snow pitchfork' || 'horse sun pitchfork' || 'horse rain pitchfork') {
         poop.style.display = 'none';
     }
 };
