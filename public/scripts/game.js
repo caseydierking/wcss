@@ -10,9 +10,7 @@ var cycleThroughPhotos = 0
 //3. Add item to the updateGameArea() function.
 // example:  apple.newPos(); 
 //           apple.update();
-
-function startGame() {
-
+function playGame() {
     var horse = document.getElementById("horse-div");
     horse.style.display = "none";
     var game = document.getElementById("game-div");
@@ -21,6 +19,16 @@ function startGame() {
     iconBar.style.display = "none";
     var stopGameButton = document.getElementById("stop-game-button");
     stopGameButton.style.display = "block";
+    var playGameButton = document.getElementById("play-game-button");
+    playGameButton.style.display = "none";
+    var startGameButton = document.getElementById("start-game-button");
+    if (typeof myGamePiece == 'undefined') {
+        startGameButton.style.display = "block";
+    }
+}
+
+
+function startGame() {
     var startGameButton = document.getElementById("start-game-button");
     startGameButton.style.display = "none";
 
@@ -52,11 +60,14 @@ function stopGame() {
     var iconBar = document.getElementById("icon-bar-div");
     iconBar.style.display = "block";
 
-    var startGameButton = document.getElementById("start-game-button");
-    startGameButton.style.display = "block";
+    var playGameButton = document.getElementById("play-game-button");
+    playGameButton.style.display = "block";
 
     var stopGameButton = document.getElementById("stop-game-button");
     stopGameButton.style.display = "none";
+
+    var startGameButton = document.getElementById("start-game-button");
+    startGameButton.style.display = "none";
 }
 
 var myGameArea = {

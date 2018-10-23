@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="h-full" lang="en">
 
 <head>
@@ -36,8 +36,11 @@
             </a>
         </div>
         <div class="game-bar">
-            <button type="button" id="start-game-button" onclick="startGame()"> Let's play a game.</button>
-            <button type="button" id="stop-game-button" style="display: none;" onclick="stopGame()"> Back to regular horse mode.</button>
+            <button type="button" id="play-game-button" onclick="playGame()"> Play game.</button>
+            <button type="button" id="stop-game-button" style="display: none;" onclick="stopGame()"> Splash Screen</button>
+        </div>
+        <div class="flex items-center justify-center my-1 start-button">
+            <button type="button" id="start-game-button" style="display: none;" onclick="startGame()">Start</button>
         </div>
         <div id="game-div" class="game-board flex items-center justify-center my-1">
             
