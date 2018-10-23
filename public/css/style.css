@@ -45,7 +45,7 @@ body {
 }
 
 .pumpkin.active{
-  cursor: url(../images/pumpkin.svg) 32 32, auto;
+  cursor: url(../images/pumpkin_active.svg) 32 32, auto;
 }
 
 .apple {
