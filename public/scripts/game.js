@@ -59,8 +59,11 @@ function stopGame() {
     var horse = document.getElementById("horse-div");
     horse.style.display = "block";
 
-    var iconBar = document.getElementById("icon-bar-div");
+    var iconBar = document.getElementById("right-icon-bar-div");
     iconBar.style.display = "block";
+
+    iconBar = document.getElementById("weather-icons")
+    iconBar.style.display = "block"
 
     var playGameButton = document.getElementById("play-game-button");
     playGameButton.style.display = "block";
