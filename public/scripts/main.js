@@ -22,7 +22,6 @@ const setUpAudio = () => {
     audio.volume = 0.05;
     audio.src = songRandom;
     audio.type = "audio/mpeg";
-
     audio.addEventListener('ended', function () {
         audio.src = 'audio/bliss.mp3';
     });
@@ -99,6 +98,7 @@ const cleanUpPoo = poop => {
     poop.style.display = "none";
   }
 };
+
 /**
 * @description Clap counter
 *   Author - @adsingh14
