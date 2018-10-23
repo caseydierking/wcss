@@ -226,7 +226,7 @@ function moveup() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedY -= 1;
+    myGamePiece.speedY -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -243,7 +243,7 @@ function movedown() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedY += 1;
+    myGamePiece.speedY += 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -262,7 +262,7 @@ function moveleft() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX -= 1;
+    myGamePiece.speedX -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -279,6 +279,6 @@ function moveright() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX += 1;
+    myGamePiece.speedX += 1.25;
     cycleThroughPhotos += 1;
 }
