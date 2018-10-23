@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="h-full" lang="en">
 
 <head>
@@ -34,7 +34,7 @@
             <a href="http://www.cutercounter.com/" target="_blank">
                 <img src="http://www.cutercounter.com/hit.php?id=gueaxcpa&nd=6&style=125" alt="View counter">
             </a>
-        </div>
+        </div>     
         <div id="left-icon-bar-div" class="icon-bar icon-bar-left">
             <div id="weather-icons">
                 <button><img src="images/sun.svg" alt="Sun" id="sun" class="weather"/></button>
@@ -42,8 +42,13 @@
                 <button><img src="images/rain.svg" alt="Rain" id="rain" class="weather"/></button>
             </div>
             <div class="game-bar">
-                <button type="button" onclick="startGame()"> Let's play a game.</button>
+                <button type="button" id="play-game-button" onclick="playGame()"> Play game.</button>
+                <button type="button" id="stop-game-button" style="display: none;" onclick="stopGame()"> Splash Screen</button>
             </div>
+            <div class="flex items-center justify-center my-1 start-button">
+                <button type="button" id="start-game-button" style="display: none;" onclick="startGame()">Start</button>
+            </div>
+
         </div>
         <div id="game-div" class="game-board flex items-center justify-center my-1">
             

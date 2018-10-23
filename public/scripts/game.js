@@ -10,15 +10,29 @@ var cycleThroughPhotos = 0
 //3. Add item to the updateGameArea() function.
 // example:  apple.newPos(); 
 //           apple.update();
-
-function startGame() {
-
+function playGame() {
     var horse = document.getElementById("horse-div")
     horse.style.display = "none"
     var iconBar = document.getElementById("right-icon-bar-div")
     iconBar.style.display = "none"
     iconBar = document.getElementById("weather-icons")
     iconBar.style.display = "none"
+    var game = document.getElementById("game-div");
+    game.style.display = "flex";
+    var stopGameButton = document.getElementById("stop-game-button");
+    stopGameButton.style.display = "block";
+    var playGameButton = document.getElementById("play-game-button");
+    playGameButton.style.display = "none";
+    var startGameButton = document.getElementById("start-game-button");
+    if (typeof myGamePiece == 'undefined') {
+        startGameButton.style.display = "block";
+    }
+}
+
+
+function startGame() {
+    var startGameButton = document.getElementById("start-game-button");
+    startGameButton.style.display = "none";
 
     myGameArea.start();
     myGamePiece = new component(130, 100, "images/horse-movements/horse-all.png", 10, 120, "image", 0, 0, 250, 188);
@@ -36,6 +50,26 @@ function startGame() {
             apple: apple
         })
     }
+}
+
+function stopGame() {
+    var game = document.getElementById("game-div");
+    game.style.display = "none";
+
+    var horse = document.getElementById("horse-div");
+    horse.style.display = "block";
+
+    var iconBar = document.getElementById("icon-bar-div");
+    iconBar.style.display = "block";
+
+    var playGameButton = document.getElementById("play-game-button");
+    playGameButton.style.display = "block";
+
+    var stopGameButton = document.getElementById("stop-game-button");
+    stopGameButton.style.display = "none";
+
+    var startGameButton = document.getElementById("start-game-button");
+    startGameButton.style.display = "none";
 }
 
 var myGameArea = {
