@@ -15,7 +15,9 @@ function startGame() {
 
     var horse = document.getElementById("horse-div")
     horse.style.display = "none"
-    var iconBar = document.getElementById("icon-bar-div")
+    var iconBar = document.getElementById("right-icon-bar-div")
+    iconBar.style.display = "none"
+    iconBar = document.getElementById("weather-icons")
     iconBar.style.display = "none"
 
     myGameArea.start();
