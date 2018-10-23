@@ -6,33 +6,72 @@
 
 *The unofficial official Hacktoberfest Horse.*
 
-[Current Version](https://winningcolors.herokuapp.com/)
+[Check it out for yourself](https://winningcolors.herokuapp.com/)
 
-Just a bunch of ridiculousness rolled up in this one.
 
 ---
 
 ### Roadmap / Todo
 **Note:** You can also check the "Issues" tab to see things that need to be done that are not on this list.
 
-- [ ] Animate each body part while stationary (e.g. eyes move, tail wags, muscles twitch, etc)
-- [ ] Ability to drag and drop horse around grass, stable, pen
-- [ ] You can paint the horse different colors
-- [ ] You can save the picture into a repository for others to view (download and upload functionality)
-- [ ] You can control the horse via arrow buttons
-- [ ] Make the horse into a 2d game where you can decorate the horse, feed the horse for energy and race against an AI
+We are blown away at the response this project has received from [Hacktoberfest](https://hacktoberfest.digitalocean.com/). Thank you to all who have contributed thus far! 
+We wanted to provide a roadmap for the vision we have for *Winning Colors Splish Splash* project. 
 
-- [ ] Make the horse wear a mask of a horse
-- [ ] Make the horse trot/gallop with the arrow buttons
+### Big Picture 
+
+The goal for this project is to learn more about open source and have fun along the way. Our vision for this project is to have a landing page where people can interact with the horse in various ways. This functionality exists today. He can "eat" an apple or carrots. The user can clean up his messes. The user can also decided what the weather is in "Straw Town". 
+
+Our future path and vision is to have the horse playable as a 2D character in a javascript web game. We want to include a fun and intriguing story-line. We don't know exactly where this will go yet but with the power of open source, we can't wait to find out.
+
+
+
+Our goal is to continue this project even after [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is over.
+
+### Phase 1
+*Start Page*
+
+- [x] Landing page where user can interact with horse in different ways.
+- [x] Soundtrack
+- [x] Add weather options
+- [x] Turn horse into SVG
+- [x] Dark Mode / Light Mode based on time of day
+- [x] Horse interacts with you by winking when you hit "spacebar"
+- [ ] Give the horse rainboots during the "rainy weather" mode
+- [ ] Give the horse a scarf and hat for "winter weather" mode
 - [ ] Have the horse neigh when given any of the fruits/veggies
-- [ ] Have the horse grow a unicorn
-- [ ] Have the horse sprout some wings and unicorn
 - [ ] Give the horse the ability to eat some hay
-- [ ] Give the horse the ability to buck!
-- [ ] Create a 2D text field and allow the horse to eat items on the ground (like a zelda/pokemon interface)
+
+### Phase 2
+*Single pane game - foundation*
+- [ ] Create a clever way to switch between game mode and start page. Make it feel like entering a game.
+- [x] Create a 2D canvas where the horse can move around.
+- [x] You can control the horse via arrow buttons
+- [ ] Make the horse trot/gallop with the arrow buttons
+- [x] Generate random apples on the canvas for the horse to pick up and eat
+- [ ] Add a fenced area onto the canvas where the horse can "live".
+- [ ] Make constraints where items or the horse are contained within the canvas
+- [ ] Add some bushes and trees to the map / Generate a map layout of the canvas
+
+
+### Phase 3
+*Expanding game to multiple quadrants*
+- [ ] Add 4 quadrants to each side of the standard canvas size and add constraints to the edges of those quadrants.
+- [ ] Add path between quadrants so you can visit each quadrant
+- [ ] Add constraints to the horse and items so they never overlap each other. Example: Horse shouldn't be able to walk over trees or fences.
+- [ ] Populate quadrants with objects. [Here is an image to reference for a visual.](https://assets.vg247.com/current/2017/01/stardew_valley-600x361.jpg)
+
+ ### Phase 4
+*Storyline Creation*
+- [ ] TBD
+
+ ### Phase 5
+*Server Side Functionality Implementation*
+- [ ] TBD
+
+
 
 **Checkbox Tip**: Do add 'x' in square brackets to show the checkbox. eg. `[x]`
 
 ### Contribution
 
-If a bug got you stressed out, let splash help take away the anxiety. If you have an old PR please [sync](https://help.github.com/articles/syncing-a-fork/) it with actual version of **master** to fix conflicts !
+Please check out our [Contribution Guide](https://github.com/caseydierking/wcss/blob/master/CONTRIBUTING.md) for more information on getting started.
