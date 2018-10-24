@@ -263,3 +263,23 @@ header h1:after {
   bottom: 50px;
   left: 15px;
 }
+
+.rainboots1 {
+	padding: 0;
+	display: none;
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	bottom: 60px;
+	left: 73px;
+}
+
+.rainboots2 {
+	padding: 0;
+	display: none;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	bottom: 40px;
+	left: 295px;
+}

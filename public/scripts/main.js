@@ -13,7 +13,8 @@ window.onload = () => {
 
 document.addEventListener("DOMContentLoaded", function (event) {
     setUpAudio();
-    checkIfNightTime();
+	checkIfNightTime();
+	checkIfRaining();
 });
 
 const setUpAudio = () => {
@@ -105,9 +106,32 @@ const loadWeather = () => {
         weather.addEventListener('click', () => {
             currentWeather = weather.id;
             playWeatherMusic();
-            updateBackground();
+			updateBackground();
+			checkIfRaining();
         }
     )}
+}
+
+function checkIfRaining() {
+	if (currentWeather === 'rain') {
+		console.log("raining");
+		let rainboots1 = document.getElementsByClassName('rainboots1')[0];
+		let rainboots2 = document.getElementsByClassName('rainboots2')[0];
+        let displayStyle1 = window.getComputedStyle(rainboots1).getPropertyValue('display');
+        let displayStyle2 = window.getComputedStyle(rainboots2).getPropertyValue('display');
+
+		rainboots1.style.display = displayStyle1 = 'inline';
+		rainboots2.style.display = displayStyle2 = 'inline';
+	} else {
+		console.log("not raining");
+		let rainboots1 = document.getElementsByClassName('rainboots1')[0];
+		let rainboots2 = document.getElementsByClassName('rainboots2')[0];
+        let displayStyle1 = window.getComputedStyle(rainboots1).getPropertyValue('display');
+        let displayStyle2 = window.getComputedStyle(rainboots2).getPropertyValue('display');
+
+		rainboots1.style.display = displayStyle1 = 'none';
+		rainboots2.style.display = displayStyle2 = 'none';
+	}
 }
 
 const playWeatherMusic = () => {
