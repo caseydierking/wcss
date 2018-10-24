@@ -92,11 +92,12 @@ const makePoo = () => {
   }, rand);
 };
 
-const cleanUpPoo = poop => {
-  const cursorType = document.getElementsByClassName("horse")[0].className;
-  if (cursorType === "horse pitchfork") {
-    poop.style.display = "none";
-  }
+
+const cleanUpPoo = (poop) => {
+    const cursorType = document.getElementsByClassName('horse')[0].className;
+    if (cursorType === 'horse snow pitchfork' || 'horse sun pitchfork' || 'horse rain pitchfork') {
+        poop.style.display = 'none';
+    }
 };
 
 /**

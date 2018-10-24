@@ -59,8 +59,11 @@ function stopGame() {
     var horse = document.getElementById("horse-div");
     horse.style.display = "block";
 
-    var iconBar = document.getElementById("icon-bar-div");
+    var iconBar = document.getElementById("right-icon-bar-div");
     iconBar.style.display = "block";
+
+    iconBar = document.getElementById("weather-icons")
+    iconBar.style.display = "block"
 
     var playGameButton = document.getElementById("play-game-button");
     playGameButton.style.display = "block";
@@ -223,7 +226,7 @@ function moveup() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedY -= 1;
+    myGamePiece.speedY -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -240,7 +243,7 @@ function movedown() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedY += 1;
+    myGamePiece.speedY += 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -259,7 +262,7 @@ function moveleft() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX -= 1;
+    myGamePiece.speedX -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -276,6 +279,6 @@ function moveright() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX += 1;
+    myGamePiece.speedX += 1.25;
     cycleThroughPhotos += 1;
 }

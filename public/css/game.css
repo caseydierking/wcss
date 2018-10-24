@@ -26,4 +26,5 @@ canvas {
     width:200px;
     font-size:35px;
     height: 64px;
+    background-color: lightgray;
 }
