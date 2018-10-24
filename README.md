@@ -36,7 +36,7 @@ Our goal is to continue this project even after [Hacktoberfest](https://hacktobe
 - [x] Turn horse into SVG
 - [x] Dark Mode / Light Mode based on time of day
 - [x] Horse interacts with you by winking when you hit "spacebar"
-- [ ] Give the horse rainboots during the "rainy weather" mode
+- [x] Give the horse rainboots during the "rainy weather" mode
 - [ ] Give the horse a scarf and hat for "winter weather" mode
 - [ ] Have the horse neigh when given any of the fruits/veggies
 - [x] Give the horse the ability to eat some hay
