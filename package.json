@@ -1,0 +1,27 @@
+{
+  "name": "wcss",
+  "version": "0.1.0",
+  "description": "The unofficial official Hacktoberfest Horse.",
+  "scripts": {
+    "start": "http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseydierking/wcss.git"
+  },
+  "keywords": [
+    "splish",
+    "splash",
+    "horse",
+    "hacktoberfest"
+  ],
+  "author": "thalaeg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caseydierking/wcss/issues"
+  },
+  "homepage": "https://github.com/caseydierking/wcss#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

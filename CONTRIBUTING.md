@@ -7,6 +7,19 @@ We love your input! We want to make contributing to this project as easy and tra
 - Proposing new features
 - Becoming a maintainer
 
+## Installation
+
+```bash
+npm install
+```
+
+## Run app
+
+```bash
+npm start
+```
+
+
 ## Pull Request Process
 
 1. Double check there are no bugs by checking the console and clicking on various items and ensuring nothing breaks.
