@@ -18,3 +18,13 @@ canvas {
     border-radius: 10px;
     background-color: #ddd;
 }
+
+
+.start-button button {
+    text-align:center;
+    vertical-align:central;
+    width:200px;
+    font-size:35px;
+    height: 64px;
+    background-color: lightgray;
+}

@@ -11,12 +11,29 @@ var cycleThroughPhotos = 0;
 // example:  apple.newPos();
 //           apple.update();
 
-function startGame() {
-    var horse = document.getElementById("horse-div");
-    horse.style.display = "none";
-    var iconBar = document.getElementById("icon-bar-div");
-    iconBar.style.display = "none";
+function playGame() {
+    var horse = document.getElementById("horse-div")
+    horse.style.display = "none"
+    var iconBar = document.getElementById("right-icon-bar-div")
+    iconBar.style.display = "none"
+    iconBar = document.getElementById("weather-icons")
+    iconBar.style.display = "none"
+    var game = document.getElementById("game-div");
+    game.style.display = "flex";
+    var stopGameButton = document.getElementById("stop-game-button");
+    stopGameButton.style.display = "block";
+    var playGameButton = document.getElementById("play-game-button");
+    playGameButton.style.display = "none";
+    var startGameButton = document.getElementById("start-game-button");
+    if (typeof myGamePiece == 'undefined') {
+        startGameButton.style.display = "block";
+    }
+}
 
+
+function startGame() {
+    var startGameButton = document.getElementById("start-game-button");
+    startGameButton.style.display = "none";
     myGameArea.start();
     myGamePiece = new component(130, 100, "images/horse-movements/horse-all.png", 10, 120, "image", 0, 0, 250, 188);
 
@@ -35,6 +52,29 @@ function startGame() {
     }
 }
 
+function stopGame() {
+    var game = document.getElementById("game-div");
+    game.style.display = "none";
+
+    var horse = document.getElementById("horse-div");
+    horse.style.display = "block";
+
+    var iconBar = document.getElementById("right-icon-bar-div");
+    iconBar.style.display = "block";
+
+    iconBar = document.getElementById("weather-icons")
+    iconBar.style.display = "block"
+
+    var playGameButton = document.getElementById("play-game-button");
+    playGameButton.style.display = "block";
+
+    var stopGameButton = document.getElementById("stop-game-button");
+    stopGameButton.style.display = "none";
+
+    var startGameButton = document.getElementById("start-game-button");
+    startGameButton.style.display = "none";
+}
+
 var myGameArea = {
     canvas: document.createElement("canvas"),
     start: function () {
@@ -44,14 +84,24 @@ var myGameArea = {
         document.getElementById("game-div").appendChild(this.canvas);
         //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
-        window.addEventListener("keydown", function (e) {
-            myGameArea.key = e.keyCode;
-            myGameArea.shiftKey = e.shiftKey;
-        });
-        window.addEventListener("keyup", function (e) {
-            myGameArea.key = false;
-            myGameArea.shiftKey = false;
-        });
+        this.keyArr = [];
+        window.addEventListener('keydown', function (e) {
+            if (!myGameArea.keyArr.includes(e.keyCode)) {
+              myGameArea.keyArr.push(e.keyCode);
+            }
+            myGameArea.activeKey = e.keyCode;
+        })
+        window.addEventListener('keyup', function (e) {
+            if (myGameArea.keyArr.includes(e.keyCode)) {
+                myGameArea.keyArr.splice(myGameArea.keyArr.indexOf(e.keyCode), 1);
+                // if a key is released but others are still held, make the active key the most recent held one
+                if (myGameArea.keyArr.length > 0) {
+                    myGameArea.activeKey = myGameArea.keyArr[myGameArea.keyArr.length - 1];
+                } else {
+                    myGameArea.activeKey = false;
+                }
+            }
+        })
     },
     clear: function () {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -109,26 +159,25 @@ function updateGameArea(e) {
     myGameArea.clear();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if (myGameArea.key && myGameArea.key == 37) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 37) {
         moveleft();
         if (myGameArea.shiftKey) {
             checkAdvanceKeys("left");
         }
     }
-
-    if (myGameArea.key && myGameArea.key == 39) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 39) {
         moveright();
         if (myGameArea.shiftKey) {
             checkAdvanceKeys("right");
         }
     }
-    if (myGameArea.key && myGameArea.key == 38) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 38) {
         moveup();
         if (myGameArea.shiftKey) {
             checkAdvanceKeys("up");
         }
     }
-    if (myGameArea.key && myGameArea.key == 40) {
+    if (myGameArea.activeKey && myGameArea.activeKey == 40) {
         movedown();
         if (myGameArea.shiftKey) {
             checkAdvanceKeys("down");
@@ -177,7 +226,7 @@ function moveup() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedY -= 1;
+    myGamePiece.speedY -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -194,7 +243,7 @@ function movedown() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedY += 1;
+    myGamePiece.speedY += 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -213,7 +262,7 @@ function moveleft() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX -= 1;
+    myGamePiece.speedX -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -230,6 +279,6 @@ function moveright() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX += 1;
+    myGamePiece.speedX += 1.25;
     cycleThroughPhotos += 1;
 }
