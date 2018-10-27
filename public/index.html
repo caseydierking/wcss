@@ -25,15 +25,19 @@
                 <h1 data-shadow='Splish'>Splish</h1>
                 <h1 data-shadow='Splash'>Splash</h1>
         </div>
-        <div class="flex items-center justify-center my-1">
+        <div class="flex items-center justify-center my-1 animated bounceInDown">
             <a href="http://www.hacktoberfest.com/">
-                <img class="hacktober-logo" src="images/hacktober_logo.png" alt="Hacktoberfest" />
+                <img class="hacktober-logo rounded" src="images/hacktober_logo.png" alt="Hacktoberfest" />
             </a>
         </div>
-        <div class="flex items-center justify-center my-1">
+        <div class="flex items-center justify-center my-1 animated zoomIn">
             <a href="http://www.cutercounter.com/" target="_blank">
                 <img src="http://www.cutercounter.com/hit.php?id=gueaxcpa&nd=6&style=125" alt="View counter">
             </a>
+            <button title="Show us your love !" id="clapBtn" class="animated zoomIn delay-1s hover:bg-green-light inline-flex border hover:text-white font-bold py-1 px-3 rounded-full ml-2 ">
+                <img src="images/clap.svg" alt="Clap" class="rounded-full h-5 mr-2">
+                <span class="clapCounter hover:text-white">0</span>
+            </button>
         </div>
         <div id="left-icon-bar-div" class="icon-bar icon-bar-left">
             <div id="weather-icons">
@@ -49,10 +53,10 @@
         <div class="flex items-center justify-center my-1 start-button">
                 <button type="button" id="start-game-button" style="display: none;" onclick="startGame()">Start</button>
         </div>
-        <div id="game-div" class="game-board flex items-center justify-center my-1">
+        <div id="game-div" class="game-board flex items-center justify-center my-1 shadow-lg">
 
         </div>
-        <div id="horse-div" class="horse text-center sun">
+        <div id="horse-div" class="horse text-center sun shadow-lg">
             <div class="mouth" onmousedown="onHorseMouseDown(this)" onmouseup="onHorseMouseUp(this)">
             </div>
             <!-- <img draggable="false" class="w-full md:w-auto horse-img" src="images/winningcolors.svg"> -->

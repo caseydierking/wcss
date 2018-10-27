@@ -102,17 +102,17 @@ const cleanUpPoo = (poop) => {
 *   Author - @adsingh14
 */
 
-// let clap = 1;
-// const clapBtn = document.getElementById("clapBtn"),
-// clapCounter = document.querySelector('.clapCounter');
+let clap = 1;
+const clapBtn = document.getElementById("clapBtn"),
+clapCounter = document.querySelector('.clapCounter');
 
-// clapBtn.addEventListener('click', function(){
-//     clapCounter.textContent = clap ++;
-//     setTimeout(function () {
-//         clapCounter.classList.remove('pulse');
-//     }, 200);
-//     clapCounter.classList.add('animated', 'pulse', 'faster');
-// });
+clapBtn.addEventListener('click', function(){
+    clapCounter.textContent = clap ++;
+    setTimeout(function () {
+        clapCounter.classList.remove('bounceIn');
+    }, 200);
+    clapCounter.classList.add('animated', 'bounceIn', 'faster');
+});
 
 const loadWeather = () => {
     for(let weather of weatherList){
