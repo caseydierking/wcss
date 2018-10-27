@@ -1,6 +1,6 @@
 var myGamePiece;
 var appleArr = [];
-var cycleThroughPhotos = 0;
+var cycleThroughPhotos = 0
 
 //To add components to the canvas, follow the steps below:
 //1. Declare variable at the top of the page.
@@ -48,7 +48,7 @@ function startGame() {
             x: x,
             y: y,
             apple: apple
-        });
+        })
     }
 }
 
@@ -59,8 +59,11 @@ function stopGame() {
     var horse = document.getElementById("horse-div");
     horse.style.display = "block";
 
-    var iconBar = document.getElementById("icon-bar-div");
+    var iconBar = document.getElementById("right-icon-bar-div");
     iconBar.style.display = "block";
+
+    iconBar = document.getElementById("weather-icons")
+    iconBar.style.display = "block"
 
     var playGameButton = document.getElementById("play-game-button");
     playGameButton.style.display = "block";
@@ -78,7 +81,7 @@ var myGameArea = {
         this.canvas.width = 800;
         this.canvas.height = 550;
         this.context = this.canvas.getContext("2d");
-        document.getElementById("game-div").appendChild(this.canvas);
+        document.getElementById("game-div").appendChild(this.canvas)
         //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
         this.keyArr = [];
@@ -103,7 +106,7 @@ var myGameArea = {
     clear: function () {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
-};
+}
 
 function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cropheight) {
     this.type = type;
@@ -117,7 +120,7 @@ function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cr
     this.speedY = 0;
     this.x = x;
     this.y = y;
-    if (typeof cropx != "undefined") {
+    if (typeof cropx != 'undefined') {
         this.cropx = cropx;
         this.cropy = cropy;
         this.cropwidth = cropwidth;
@@ -126,89 +129,72 @@ function component(width, height, color, x, y, type, cropx, cropy, cropwidth, cr
     this.update = function () {
         ctx = myGameArea.context;
         if (type == "image") {
-            if (typeof cropx != "undefined") {
-                ctx.drawImage(this.image, this.cropx, this.cropy, this.cropwidth, this.cropheight, this.x, this.y, this.width, this.height);
+            if (typeof cropx != 'undefined') {
+                ctx.drawImage(this.image,
+                    this.cropx,
+                    this.cropy,
+                    this.cropwidth,
+                    this.cropheight,
+                    this.x,
+                    this.y,
+                    this.width,
+                    this.height
+                );
             } else {
-                ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+                ctx.drawImage(this.image,
+                    this.x,
+                    this.y,
+                    this.width,
+                    this.height);
             }
+
         } else {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
         }
     }
-        ;
     this.newPos = function () {
         this.x += this.speedX;
         this.y += this.speedY;
 
         // if horse close to the apple, remove apple from appleArr
-        appleArr.forEach((apple, index, object) => {
-            if (Math.abs(this.x - apple.x) < 100 && Math.abs(this.y - apple.y) < 100) {
-                object.splice(index, 1);
+        appleArr.forEach(
+            (apple, index, object) => {
+                if (Math.abs(this.x - apple.x) < 100 && Math.abs(this.y - apple.y) < 100) {
+                    object.splice(index, 1);
+                }
             }
-        }
-        );
+        )
     }
-        ;
 }
 
-function updateGameArea(e) {
+function updateGameArea() {
     myGameArea.clear();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if (myGameArea.activeKey && myGameArea.activeKey == 37) {
         moveleft();
-        if (myGameArea.shiftKey) {
-            checkAdvanceKeys("left");
-        }
     }
     if (myGameArea.activeKey && myGameArea.activeKey == 39) {
         moveright();
-        if (myGameArea.shiftKey) {
-            checkAdvanceKeys("right");
-        }
     }
     if (myGameArea.activeKey && myGameArea.activeKey == 38) {
         moveup();
-        if (myGameArea.shiftKey) {
-            checkAdvanceKeys("up");
-        }
     }
     if (myGameArea.activeKey && myGameArea.activeKey == 40) {
         movedown();
-        if (myGameArea.shiftKey) {
-            checkAdvanceKeys("down");
-        }
     }
 
-    appleArr.forEach(appleObj => {
-        appleObj.apple.update();
-    }
-    );
+    appleArr.forEach(
+        (appleObj) => {
+            appleObj.apple.update();
+        }
+    )
     myGamePiece.newPos();
     myGamePiece.update();
 
-    /**
-   * @description Binding Arrow keys with another keys
-   */
-
-    function checkAdvanceKeys(input) {
-        switch (input) {
-            case "left":
-                myGamePiece.speedX = -3;
-                break;
-            case "right":
-                myGamePiece.speedX = 3;
-                break;
-            case "up":
-                myGamePiece.speedY = -3;
-                break;
-            case "down":
-                myGamePiece.speedY = 3;
-                break;
-        }
-    }
 }
+
 
 function moveup() {
     myGamePiece.cropy = 564;
@@ -223,7 +209,7 @@ function moveup() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedY -= 1;
+    myGamePiece.speedY -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -238,9 +224,9 @@ function movedown() {
     } else if (cycleThroughPhotos < 20) {
         myGamePiece.cropx = 0;
     } else if (cycleThroughPhotos > 25) {
-        cycleThroughPhotos = 0;
+        cycleThroughPhotos = 0
     }
-    myGamePiece.speedY += 1;
+    myGamePiece.speedY += 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -259,7 +245,7 @@ function moveleft() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX -= 1;
+    myGamePiece.speedX -= 1.25;
     cycleThroughPhotos += 1;
 }
 
@@ -276,6 +262,6 @@ function moveright() {
     } else if (cycleThroughPhotos > 25) {
         cycleThroughPhotos = 0;
     }
-    myGamePiece.speedX += 1;
+    myGamePiece.speedX += 1.25;
     cycleThroughPhotos += 1;
 }
