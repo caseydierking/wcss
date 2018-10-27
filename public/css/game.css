@@ -18,6 +18,24 @@ canvas {
     border-radius: 10px;
     background-color: #ddd;
 }
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<<<< Temporary merge branch 1
+
+
+.start-button button {
+    text-align:center;
+    vertical-align:central;
+    width:200px;
+    font-size:35px;
+    height: 64px;
+}
+||||||||| merged common ancestors
+=========
+
+=======
+
+>>>>>>> e52f3c4fa5cf2700613f9c404fa9f8b02f711ad7
 
 .start-button button {
     text-align:center;

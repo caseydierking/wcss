@@ -20,7 +20,6 @@ We wanted to provide a roadmap for the vision we have for *Winning Colors Splish
 ### Big Picture 
 
 The goal for this project is to learn more about open source and have fun along the way. Our vision for this project is to have a landing page where people can interact with the horse in various ways. This functionality exists today. He can "eat" an apple or carrots. The user can clean up his messes. The user can also decided what the weather is in "Straw Town". 
-
 Our future path and vision is to have the horse playable as a 2D character in a javascript web game. We want to include a fun and intriguing story-line. We don't know exactly where this will go yet but with the power of open source, we can't wait to find out.
 
 

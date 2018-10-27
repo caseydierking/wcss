@@ -22,7 +22,17 @@ const setUpAudio = () => {
     audio.volume = 0.05;
     audio.src = songRandom;
     audio.type = "audio/mpeg";
+<<<<<<< HEAD
 
+||||||| merged common ancestors
+<<<<<<<<< Temporary merge branch 1
+
+||||||||| merged common ancestors
+=========
+    
+>>>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> e52f3c4fa5cf2700613f9c404fa9f8b02f711ad7
     audio.addEventListener('ended', function () {
         audio.src = 'audio/bliss.mp3';
     });
@@ -93,12 +103,68 @@ const makePoo = () => {
     }, rand);
 };
 
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<<<< Temporary merge branch 1
+const cleanUpPoo = poop => {
+  const cursorType = document.getElementsByClassName("horse")[0].className;
+  if (cursorType === "horse pitchfork") {
+    poop.style.display = "none";
+  }
+||||||||| merged common ancestors
+const cleanUpPoo = (poop) => {
+    const cursorType = document.getElementsByClassName('horse')[0].className;
+    if (cursorType === 'horse pitchfork') {
+        poop.style.display = 'none';
+    }
+=========
+=======
+
+>>>>>>> e52f3c4fa5cf2700613f9c404fa9f8b02f711ad7
 const cleanUpPoo = (poop) => {
     const cursorType = document.getElementsByClassName('horse')[0].className;
     if (cursorType === 'horse snow pitchfork' || 'horse sun pitchfork' || 'horse rain pitchfork') {
         poop.style.display = 'none';
     }
 };
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<<<< Temporary merge branch 1
+/**
+* @description Clap counter
+*   Author - @adsingh14
+*/
+
+// let clap = 1;
+// const clapBtn = document.getElementById("clapBtn"),
+// clapCounter = document.querySelector('.clapCounter');
+
+// clapBtn.addEventListener('click', function(){
+//     clapCounter.textContent = clap ++;
+//     setTimeout(function () {
+//         clapCounter.classList.remove('pulse');
+//     }, 200);
+//     clapCounter.classList.add('animated', 'pulse', 'faster');
+// });
+=======
+
+/**
+* @description Clap counter
+*   Author - @adsingh14
+*/
+
+// let clap = 1;
+// const clapBtn = document.getElementById("clapBtn"),
+// clapCounter = document.querySelector('.clapCounter');
+
+// clapBtn.addEventListener('click', function(){
+//     clapCounter.textContent = clap ++;
+//     setTimeout(function () {
+//         clapCounter.classList.remove('pulse');
+//     }, 200);
+//     clapCounter.classList.add('animated', 'pulse', 'faster');
+// });
+>>>>>>> e52f3c4fa5cf2700613f9c404fa9f8b02f711ad7
 
 const loadWeather = () => {
     for(let weather of weatherList){
@@ -123,6 +189,7 @@ const updateBackground = () => {
     let background = document.querySelector('#horse-div');
     background.className = `horse ${currentWeather} ${currentCursor}`
 }
+<<<<<<< HEAD
 
 
 /**
@@ -140,3 +207,33 @@ const updateBackground = () => {
 //         clapCounter.classList.remove('pulse');
 //     }, 200);
 //
+||||||| merged common ancestors
+||||||||| merged common ancestors
+=========
+
+const loadWeather = () => {
+    for(let weather of weatherList){
+        weather.addEventListener('click', () => {
+            currentWeather = weather.id;
+            playWeatherMusic();
+            updateBackground();
+        }
+    )}
+}
+
+const playWeatherMusic = () => {
+    let music = currentWeather === 'sun' ? 'bliss' : currentWeather;
+    audio.src = `audio/${music}.mp3`;
+
+    audio.loop = "true";
+    audio.load();
+    audio.play();
+}
+
+const updateBackground = () => {
+    let background = document.querySelector('#horse-div');
+    background.className = `horse ${currentWeather} ${currentCursor}`
+}
+>>>>>>>>> Temporary merge branch 2
+=======
+>>>>>>> e52f3c4fa5cf2700613f9c404fa9f8b02f711ad7
