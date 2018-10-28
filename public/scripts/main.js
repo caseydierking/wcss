@@ -1,22 +1,22 @@
 "use strict";
 // List of edible items
 var FOOD_LIST = ['apple','carrot','hay','pumpkin'];
-const weatherList = document.querySelectorAll('.weather');
+let weatherList = document.querySelectorAll('.weather');
 const audio = document.querySelector('audio');
 let currentWeather ='sun';
 let currentCursor = 'text-center';
 
-window.onload = () => {
+window.addEventListener("load", function () {
     makePoo();
     loadWeather();
-};
+});
 
 document.addEventListener("DOMContentLoaded", function (event) {
     setUpAudio();
     checkIfNightTime();
 });
 
-const setUpAudio = () => {
+const setUpAudio = function() {
     var song = ['audio/Horse-and-carriage-passing-by.mp3', 'audio/Horse-hooves-sound.mp3', 'audio/Horse-sound-effect.mp3'];
     var songRandom = song[Math.floor(Math.random() * song.length)];
     audio.volume = 0.05;
@@ -27,7 +27,8 @@ const setUpAudio = () => {
         audio.src = 'audio/bliss.mp3';
     });
     document.onmouseover = function () {
-        audio.play();
+		audio.muted = false;
+		audio.play();
     };
 }
 
@@ -83,7 +84,7 @@ document.querySelector('.dark-mode-btn').addEventListener('click', function () {
     document.querySelector('body').classList.toggle('dark-mode');
 });
 
-const makePoo = () => {
+const makePoo = function() {
     let rand = Math.round(Math.random() * (10000) + 20000);
     setTimeout(function() {
         makePoo();
@@ -93,33 +94,35 @@ const makePoo = () => {
     }, rand);
 };
 
-const cleanUpPoo = (poop) => {
+const cleanUpPoo = function(poop) {
     const cursorType = document.getElementsByClassName('horse')[0].className;
     if (cursorType === 'horse snow pitchfork' || 'horse sun pitchfork' || 'horse rain pitchfork') {
         poop.style.display = 'none';
     }
 };
 
-const loadWeather = () => {
-    for(let weather of weatherList){
-        weather.addEventListener('click', () => {
+const loadWeather = function() {
+    weatherList = Array.prototype.slice.call(weatherList);
+	weatherList.forEach(function(weather) {
+        weather.addEventListener("click", function() {
             currentWeather = weather.id;
             playWeatherMusic();
             updateBackground();
-        }
-    )}
-}
+        });
+	});
+};
 
-const playWeatherMusic = () => {
+const playWeatherMusic = function() {
     let music = currentWeather === 'sun' ? 'bliss' : currentWeather;
-    audio.src = `audio/${music}.mp3`;
-
+    //audio.src = `audio/${music}.mp3`; 
+	audio.src = 'audio/' + music + '.mp3';
     audio.loop = "true";
     audio.load();
     audio.play();
 }
 
-const updateBackground = () => {
+const updateBackground = function() {
     let background = document.querySelector('#horse-div');
-    background.className = `horse ${currentWeather} ${currentCursor}`
+    //background.className = `horse ${currentWeather} ${currentCursor}`
+	background.className = 'horse ' + currentWeather + ' ' + currentCursor;
 }

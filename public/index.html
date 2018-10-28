@@ -24,6 +24,7 @@
                 <h1 data-shadow='Colors'>Colors</h1>
                 <h1 data-shadow='Splish'>Splish</h1>
                 <h1 data-shadow='Splash'>Splash</h1>
+			</header>
         </div>
         <div class="flex items-center justify-center my-1">
             <a href="http://www.hacktoberfest.com/">
@@ -37,9 +38,9 @@
         </div>     
         <div id="left-icon-bar-div" class="icon-bar icon-bar-left">
             <div id="weather-icons">
-                <button><img src="images/sun.svg" alt="Sun" id="sun" class="weather"/></button>
-                <button><img src="images/snow.svg" alt="Snow" id="snow" class="weather"/></button>
-                <button><img src="images/rain.svg" alt="Rain" id="rain" class="weather"/></button>
+                <div><img src="images/sun.svg" alt="Sun" id="sun" class="weather"/></div>
+                <div><img src="images/snow.svg" alt="Snow" id="snow" class="weather"/></div>
+                <div><img src="images/rain.svg" alt="Rain" id="rain" class="weather"/></div>
             </div>
             <div class="game-bar">
                 <button type="button" id="play-game-button" onclick="playGame()"> Play game.</button>
@@ -111,9 +112,8 @@
             <button class="dark-mode-btn"><img src="images/light-on.svg" alt="Toggle light"></button>
         </div>
     </div>
-    </div>
 
-    <audio >
+    <audio autoplay="true" muted="muted">
         <!-- <source src="audio/bliss.mp3" type="audio/mpeg"> -->
     </audio>
 

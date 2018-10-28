@@ -201,6 +201,25 @@ header h1:after {
   left: 24px;
 }
 
+#weather-icons div {
+  outline: none;
+  opacity: 0.7;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+#weather-icons div:hover {
+  opacity: 1;
+}
+#weather-icons div.active {
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+}
+.dark-mode .icon-bar div.active {
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
+}
 .icon-bar button {
   outline: none;
   opacity: 0.7;
