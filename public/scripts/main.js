@@ -26,10 +26,17 @@ const setUpAudio = function() {
     audio.addEventListener('ended', function () {
         audio.src = 'audio/bliss.mp3';
     });
-    document.onmouseover = function () {
+	playAudio(true);
+}
+
+//function to start/pause the audio based on boolean flag passed. Audio is played if flag is true
+function playAudio(play) {
+	if (play) {
 		audio.muted = false;
 		audio.play();
-    };
+	} else {
+		audio.pause();
+	}
 }
 
 function checkIfNightTime() {

@@ -27,6 +27,7 @@ function playGame() {
     if (typeof myGamePiece == 'undefined') {
         startGameButton.style.display = "block";
     }
+	playAudio(false);
 }
 
 
@@ -73,6 +74,8 @@ function stopGame() {
 
     var startGameButton = document.getElementById("start-game-button");
     startGameButton.style.display = "none";
+	
+	playAudio(true);
 }
 
 var myGameArea = {
