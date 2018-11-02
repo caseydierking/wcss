@@ -4,7 +4,7 @@
 
 # Winning Colors Splish Splash
 
-*The unofficial official Hacktoberfest Horse.*
+*The unofficial official GameOff Horse.*
 
 [Check it out for yourself](https://winningcolors.herokuapp.com/)
 
@@ -25,7 +25,7 @@ Our future path and vision is to have the horse playable as a 2D character in a 
 
 
 
-Our goal is to continue this project even after [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is over.
+Our goal is to turn this project into a game for [GameOff](https://blog.github.com/2018-11-01-game-off-2018-theme-announcement/).
 
 ### Phase 1
 *Start Page*
